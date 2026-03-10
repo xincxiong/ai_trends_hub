@@ -170,8 +170,74 @@ python scripts/run_fetch.py
 python scripts/run_api.py
 ```
 
-- `GET /health`：健康检查  
-- `GET /articles`：按模块分页查询  
-  - `main_category`：`ai_hardware` / `ai_software` / `ai_application` / `ai_funding_ma` / `ai_research`  
-  - `limit`、`offset`：分页  
-  - `q`：标题/摘要/来源关键字模糊搜索  
+### API 接口说明
+
+| 接口 | 说明 | 参数 |
+|------|------|------|
+| `GET /health` | 健康检查 | - |
+| `GET /articles` | 按模块分页查询文章列表 | `main_category`, `limit`, `offset`, `q` |
+
+### 前端页面展示内容
+
+项目前端是一个 **AI 行业资讯聚合展示页**，按以下维度展示抓取到的内容：
+
+#### 主分类（main_category）
+
+| 分类 | 说明 | 示例内容 |
+|------|------|----------|
+| `ai_hardware` | AI 硬件/芯片/服务器 | GPU（Nvidia H100/H200/B200）、AI 服务器、存储与网络、芯片封装（HBM、CoWoS）、渠道报价、智算中心 |
+| `ai_software` | AI 软件/模型/工具链 | 大模型发布（GPT、DeepSeek、通义、Kimi）、开源模型、Agent 平台、SDK 与框架 |
+| `ai_application` | 行业应用与落地 | 医疗、金融、制造、零售、教育、自动驾驶等实际落地案例 |
+| `ai_funding_ma` | 融资与并购 | 融资轮次、投资事件、并购交易、估值变动 |
+| `ai_research` | 科研与算法 | 新算法/架构（Transformer、MoE、Diffusion）、顶会论文（ NeurIPS/ICLR/arXiv）、评测基准 |
+
+#### 每条数据的字段
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `date` | string | 发布日期（YYYY-MM-DD） |
+| `title` | string | 中文新闻标题 |
+| `summary` | string | 中文 2-3 句摘要 |
+| `source` | string | 来源媒体（Reuters、财新、Bloomberg 等） |
+| `url` | string | 原文链接 |
+| `canonical_url` | string | 规范化后的链接（去重用） |
+| `region` | string | 区域：Global / China / US / EU / APAC |
+| `segment` | string | 业务分段（可选） |
+| `tags` | array | 2-5 个中文标签 |
+| `event_type` | string | 类型：fact（事实） / analysis（分析） / technical（技术） |
+| `main_category` | string | 主分类（见上表） |
+| `sub_categories` | array | 细分类标签数组 |
+| `metrics` | object | 渠道/成本/报价类指标（可选） |
+| `evidence` | object | 真实性证据（可选） |
+
+#### API 调用示例
+
+```bash
+# 全部文章
+curl "http://localhost:8000/articles"
+
+# 按分类筛选（AI 硬件）
+curl "http://localhost:8000/articles?main_category=ai_hardware&limit=10"
+
+# 分页查询（第 2 页，每页 20 条）
+curl "http://localhost:8000/articles?limit=20&offset=20"
+
+# 关键字搜索（Nvidia 相关）
+curl "http://localhost:8000/articles?q=Nvidia&limit=5"
+
+# 组合查询：AI 硬件 + 关键词
+curl "http://localhost:8000/articles?main_category=ai_hardware&q=H100&limit=10"
+```
+
+### 数据抓取配置（可选）
+
+除基础配置外，还可以通过环境变量控制抓取行为：
+
+| 变量 | 默认值 | 说明 |
+|------|--------|------|
+| `AI_TRENDS_WINDOW_DAYS` | 2 | 抓取最近几天 |
+| `AI_TRENDS_MAX_ITEMS` | 400 | 单次最大条数 |
+| `AI_TRENDS_REPORT_TZ` | Asia/Shanghai | 时间窗口时区 |
+| `AI_TRENDS_TWO_STAGE` | true | true=两阶段（召回+核验），false=单阶段 |
+| `AI_TRENDS_LOCAL_REF_PATH` | - | 本地参考样本 JSON 路径（用于去重与召回引导） |
+| `AI_TRENDS_NEWS_KEEP_DAYS` | 30 | 聚合文件保留最近 N 天 |

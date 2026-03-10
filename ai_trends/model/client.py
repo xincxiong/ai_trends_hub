@@ -65,11 +65,11 @@ def get_api_support_info() -> Dict[str, Any]:
 
 
 def _resolve_base_url() -> Optional[str]:
-    """解析 Base URL：优先 LLM_API_BASE，否则按 LLM_PROVIDER 使用国产模型预设。"""
-    if settings.llm_api_base:
-        return settings.llm_api_base.strip().rstrip("/")
+    """解析 Base URL：已设 LLM_PROVIDER 时用该厂商预设，保证与 Key 一致；否则用 LLM_API_BASE。"""
     if settings.llm_provider and settings.llm_provider in DOMESTIC_LLM_BASE_URLS:
         return DOMESTIC_LLM_BASE_URLS[settings.llm_provider].rstrip("/")
+    if settings.llm_api_base:
+        return settings.llm_api_base.strip().rstrip("/")
     return None
 
 
@@ -122,7 +122,15 @@ def call_responses(
             f"当前接入 [{info['provider_kind']}]：{info['description']}",
             file=sys.stderr,
         )
-        return _call_chat_completions(client, prompt)
+        try:
+            return _call_chat_completions(client, prompt)
+        except AuthenticationError as e:
+            base = _resolve_base_url() or "(OpenAI 默认)"
+            raise RuntimeError(
+                f"API Key 认证失败（401）。当前使用：provider={info['provider_kind']}, base={base}。"
+                "请确认：1) env.sh 里的 LLM_API_KEY 是否来自该厂商；2) 该 Key 在对应控制台是否有效、未过期；"
+                "3) 若用代理或自定义 Base，LLM_API_BASE 是否与 Key 所属服务一致。修改后请重新 source env.sh 再运行。"
+            ) from e
 
     # OpenAI 或自定义网关：优先 Responses API
     try:

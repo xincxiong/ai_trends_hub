@@ -24,38 +24,45 @@ export PYTHONPATH="${SCRIPT_DIR}${PYTHONPATH:+:$PYTHONPATH}"
 
 #############################
 # 方式二：国产模型（仅 Chat Completions，无联网搜索）
-# 设置 LLM_PROVIDER 后会自动使用对应 Base URL，无需再设 LLM_API_BASE
+# 设置 LLM_PROVIDER 后会自动使用内置 Base URL，一般无需设 LLM_API_BASE。
+# 仅在使用代理、私有化部署或厂商更换域名时，可取消下面 LLM_API_BASE 注释并填写。
 #############################
 
 # --- 智谱 AI ---
 # export LLM_PROVIDER=zhipu
 # export LLM_API_KEY="你的智谱-API-Key"
 # export AI_TRENDS_MODEL="glm-4-flash"
+# export LLM_API_BASE="https://open.bigmodel.cn/api/paas/v4/"   # 可选，不设则用内置默认
 
 # --- 月之暗面 Kimi ---
 # export LLM_PROVIDER=moonshot
 # export LLM_API_KEY="你的-Moonshot-API-Key"
 # export AI_TRENDS_MODEL="moonshot-v1-8k"
+# export LLM_API_BASE="https://api.moonshot.cn/v1"   # 可选，不设则用内置默认
 
 # --- 通义千问 ---
 # export LLM_PROVIDER=dashscope
 # export LLM_API_KEY="你的-DashScope-API-Key"
 # export AI_TRENDS_MODEL="qwen-plus"
+# export LLM_API_BASE="https://dashscope.aliyuncs.com/compatible-mode/v1"   # 可选，不设则用内置默认
 
 # --- DeepSeek ---
 # export LLM_PROVIDER=deepseek
 # export LLM_API_KEY="你的-DeepSeek-API-Key"
 # export AI_TRENDS_MODEL="deepseek-chat"
+# export LLM_API_BASE="https://api.deepseek.com/v1"   # 可选，不设则用内置默认
 
 # --- 豆包（火山引擎）---
 # export LLM_PROVIDER=doubao
 # export LLM_API_KEY="你的-豆包-API-Key"
 # export AI_TRENDS_MODEL="豆包模型名"
+# export LLM_API_BASE="https://ark.cn-beijing.volces.com/api/v3"   # 可选，区域可调，不设则用内置默认
 
 # --- MiniMax ---
 # export LLM_PROVIDER=minimax
 # export LLM_API_KEY="你的-MiniMax-API-Key"
 # export AI_TRENDS_MODEL="abab6.5s-chat"
+# export LLM_API_BASE="https://api.minimax.chat/v1"   # 可选，不设则用内置默认
 
 #############################
 # 抓取与数据（可选，有默认值）

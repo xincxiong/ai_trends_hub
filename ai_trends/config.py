@@ -15,7 +15,7 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 DOMESTIC_LLM_BASE_URLS: dict[str, str] = {
     "zhipu": "https://open.bigmodel.cn/api/paas/v4/",           # 智谱 AI
     "moonshot": "https://api.moonshot.cn/v1",                    # 月之暗面 Kimi
-    "dashscope": "https://dashscope.aliyuncs.com/compatible-mode/v1",  # 通义千问
+    "dashscope": "https://dashscope.aliyuncs.com/api/v2/apps/protocols/compatible-mode/v1",         ##"https://coding.dashscope.aliyuncs.com/v1",  # 通义千问（coding 端点；兼容模式: https://dashscope.aliyuncs.com/compatible-mode/v1）
     "doubao": "https://ark.cn-beijing.volces.com/api/v3",         # 豆包（火山引擎，区域可调）
     "deepseek": "https://api.deepseek.com/v1",                   # DeepSeek
     "minimax": "https://api.minimax.chat/v1",                    # MiniMax
