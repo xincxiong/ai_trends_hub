@@ -10,6 +10,19 @@ DATA_DIR = BASE_DIR / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
+# 国产模型 API 预设 Base URL（OpenAI 兼容端点）
+# 使用方式：设置 LLM_PROVIDER=zhipu 等，无需再设 LLM_API_BASE
+DOMESTIC_LLM_BASE_URLS: dict[str, str] = {
+    "zhipu": "https://open.bigmodel.cn/api/paas/v4/",           # 智谱 AI
+    "moonshot": "https://api.moonshot.cn/v1",                    # 月之暗面 Kimi
+    "dashscope": "https://dashscope.aliyuncs.com/compatible-mode/v1",  # 通义千问
+    "doubao": "https://ark.cn-beijing.volces.com/api/v3",         # 豆包（火山引擎，区域可调）
+    "deepseek": "https://api.deepseek.com/v1",                   # DeepSeek
+    "minimax": "https://api.minimax.chat/v1",                    # MiniMax
+    "qwen": "https://dashscope.aliyuncs.com/compatible-mode/v1",   # 通义（同 dashscope）
+}
+
+
 @dataclass
 class Settings:
     # 大模型配置（可自定义 API）
@@ -17,6 +30,9 @@ class Settings:
     llm_api_key: str = os.getenv("LLM_API_KEY", os.getenv("OPENAI_API_KEY", ""))
     llm_api_base: str | None = os.getenv("LLM_API_BASE")  # 可选：自定义兼容 OpenAI 的 Base URL
     llm_model: str = os.getenv("AI_TRENDS_MODEL", "gpt-4.1-mini")
+    # 国产模型接入：设为 zhipu / moonshot / dashscope / doubao / deepseek / minimax / qwen 等时，
+    # 自动使用对应 Base URL（若未设置 LLM_API_BASE）
+    llm_provider: str = (os.getenv("LLM_PROVIDER") or "").strip().lower()
 
     # 数据文件
     news_data_path: Path = DATA_DIR / "news.json"

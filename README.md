@@ -69,12 +69,42 @@ pip install -r requirements.txt
 
 - `LLM_API_KEY` 或 `OPENAI_API_KEY`：API 密钥  
 - `LLM_API_BASE`（可选）：自定义 Base URL  
-- `AI_TRENDS_MODEL`（可选）：模型名，默认如 `gpt-4.1-mini`
+- `AI_TRENDS_MODEL`（可选）：模型名，默认如 `gpt-4.1-mini`  
+- `LLM_PROVIDER`（可选）：国产模型接入时使用，见下方
 
 ```bash
 export LLM_API_KEY="your-api-key"
 # export LLM_API_BASE="https://your-gateway/v1"  # 可选
 ```
+
+**国产模型 API 接入**：设置 `LLM_PROVIDER` 后会自动使用对应厂商的 OpenAI 兼容 Base URL，无需再配 `LLM_API_BASE`。支持的厂商：
+
+| `LLM_PROVIDER` | 说明 |
+|----------------|------|
+| `zhipu` | 智谱 AI |
+| `moonshot` | 月之暗面 Kimi |
+| `dashscope` / `qwen` | 通义千问 |
+| `doubao` | 豆包（火山引擎） |
+| `deepseek` | DeepSeek |
+| `minimax` | MiniMax |
+
+示例（智谱）：
+
+```bash
+export LLM_PROVIDER=zhipu
+export LLM_API_KEY="你的智谱 API Key"
+export AI_TRENDS_MODEL="glm-4-flash"   # 或 glm-4、glm-4-long 等
+```
+
+示例（月之暗面）：
+
+```bash
+export LLM_PROVIDER=moonshot
+export LLM_API_KEY="你的 Moonshot API Key"
+export AI_TRENDS_MODEL="moonshot-v1-8k"
+```
+
+若厂商仅支持 Chat Completions 而不支持 Responses API（如 `web_search`），需使用支持该能力的网关或 OpenAI 官方接口进行抓取。
 
 3. 执行一次抓取（更新 `data/news.json` 与快照）：
 
