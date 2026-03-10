@@ -22,6 +22,12 @@ DOMESTIC_LLM_BASE_URLS: dict[str, str] = {
     "qwen": "https://dashscope.aliyuncs.com/compatible-mode/v1",   # 通义（同 dashscope）
 }
 
+# 支持 OpenAI Responses API（含 web_search 联网搜索）的接入方式。
+# - "openai"：未设置 LLM_PROVIDER 或使用 OpenAI 官方端点时，视为支持 Responses API。
+# - "custom"：仅设置 LLM_API_BASE 时，会先尝试 Responses API，不支持则降级为 Chat Completions。
+# 国产模型（DOMESTIC_LLM_BASE_URLS 中的 key）均不支持 Responses API，仅支持 Chat Completions。
+RESPONSES_API_SUPPORTED_PROVIDERS = frozenset({"openai", "custom"})
+
 
 @dataclass
 class Settings:
@@ -41,6 +47,30 @@ class Settings:
     # 抓取相关
     window_days: int = int(os.getenv("AI_TRENDS_WINDOW_DAYS", "2"))
     max_items: int = int(os.getenv("AI_TRENDS_MAX_ITEMS", "400"))
+    report_tz: str = os.getenv("AI_TRENDS_REPORT_TZ", "Asia/Shanghai")
+
+    # 两阶段抓取（URL 召回 + 联网核验）
+    two_stage_fetch: bool = os.getenv("AI_TRENDS_TWO_STAGE", "true").lower() in ("1", "true", "yes")
+    local_ref_path: str | None = os.getenv("AI_TRENDS_LOCAL_REF_PATH") or None  # 本地参考样本，用于去重与召回引导
+    local_sample_size: int = int(os.getenv("AI_TRENDS_LOCAL_SAMPLE_SIZE", "120"))
+    include_existing_in_output: bool = os.getenv("AI_TRENDS_INCLUDE_EXISTING", "true").lower() in ("1", "true", "yes")
+
+    # Stage A 召回
+    stage_a_passes: int = int(os.getenv("AI_TRENDS_STAGE_A_PASSES", "16"))
+    stage_a_max_urls: int = int(os.getenv("AI_TRENDS_STAGE_A_MAX_URLS", "420"))
+    stage_a_per_pass_limit: int = int(os.getenv("AI_TRENDS_STAGE_A_PER_PASS_LIMIT", "26"))
+    relax_stage_a_filters: bool = True
+    enable_channel_monitoring: bool = True
+
+    # Stage B 核验
+    verify_batch_size: int = int(os.getenv("AI_TRENDS_VERIFY_BATCH_SIZE", "10"))
+    verify_min_confidence: float = float(os.getenv("AI_TRENDS_VERIFY_MIN_CONFIDENCE", "0.74"))
+    verify_require_date: bool = True
+    strict_domain_after_verify: bool = False
+
+    # 存储与增量
+    news_backup_before_merge: bool = True
+    news_keep_days: int = int(os.getenv("AI_TRENDS_NEWS_KEEP_DAYS", "30"))
 
     # 基本类别
     main_categories: tuple[str, ...] = (

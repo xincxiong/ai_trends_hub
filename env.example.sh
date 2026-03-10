@@ -1,18 +1,21 @@
 #!/usr/bin/env bash
-# AI Trends Hub 环境配置示例脚本
+# AI Trends Hub 环境配置示例
 #
 # 使用步骤：
 #   1. 复制：cp env.example.sh env.sh
-#   2. 编辑 env.sh，取消注释并填写你要用的配置块（二选一或自定义）
-#   3. 加载：source env.sh
-#   4. 运行：python scripts/run_fetch.py 或 python scripts/run_api.py
+#   2. 编辑 env.sh，取消注释并填写你要用的配置块（方式一 或 方式二 选一）
+#   3. 加载：source env.sh   （必须用 source，不要用 bash env.sh）
+#   4. 运行：python scripts/run_fetch.py  或  python scripts/run_api.py
+#
+# 接口支持：方式一（OpenAI/自定义网关）支持 Responses API（含 web_search 联网搜索）；
+#          方式二（国产模型）仅支持 Chat Completions，无联网搜索，结果基于模型知识。
 
-set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
+export PYTHONPATH="${SCRIPT_DIR}${PYTHONPATH:+:$PYTHONPATH}"
 
 #############################
-# 方式一：OpenAI 或自定义网关
+# 方式一：OpenAI 或自定义网关（支持 Responses API / web_search）
 #############################
 # export LLM_API_KEY="你的-OpenAI-或网关-Key"
 # export LLM_API_BASE="https://api.openai.com/v1"   # 可选，不设则用 OpenAI 默认
@@ -20,7 +23,8 @@ cd "$SCRIPT_DIR"
 # export AI_TRENDS_MODEL="gpt-4.1-mini"
 
 #############################
-# 方式二：国产模型（选一个取消注释并填 Key）
+# 方式二：国产模型（仅 Chat Completions，无联网搜索）
+# 设置 LLM_PROVIDER 后会自动使用对应 Base URL，无需再设 LLM_API_BASE
 #############################
 
 # --- 智谱 AI ---
@@ -56,7 +60,11 @@ cd "$SCRIPT_DIR"
 #############################
 # 抓取与数据（可选，有默认值）
 #############################
-# export AI_TRENDS_WINDOW_DAYS=2    # 抓取最近几天
-# export AI_TRENDS_MAX_ITEMS=400    # 单次最大条数
+# export AI_TRENDS_WINDOW_DAYS=2      # 抓取最近几天
+# export AI_TRENDS_MAX_ITEMS=400      # 单次最大条数
+# export AI_TRENDS_REPORT_TZ=Asia/Shanghai   # 时间窗口时区
+# export AI_TRENDS_TWO_STAGE=true    # true=两阶段(召回+核验)，false=单阶段
+# export AI_TRENDS_LOCAL_REF_PATH=    # 本地参考样本 JSON 路径，用于去重与召回引导
+# export AI_TRENDS_NEWS_KEEP_DAYS=30 # 聚合文件保留最近 N 天
 
 echo "AI Trends Hub 环境已加载 (SCRIPT_DIR=$SCRIPT_DIR)"

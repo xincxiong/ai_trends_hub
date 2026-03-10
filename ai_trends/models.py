@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import date, datetime
 from typing import List, Optional
 
-from pydantic import BaseModel, Field, HttpUrl, validator
+from pydantic import BaseModel, Field, validator
 
 
 class Evidence(BaseModel):
@@ -28,8 +28,8 @@ class Article(BaseModel):
     title: str
     summary: str
     source: str
-    url: HttpUrl
-    canonical_url: str
+    url: str = Field(..., description="原文链接")
+    canonical_url: str = ""
 
     region: str = "Global"
     segment: str = ""
@@ -55,6 +55,12 @@ class Article(BaseModel):
         except Exception:
             raise ValueError("date must be YYYY-MM-DD")
         return v.strip()
+
+    @validator("url", pre=True)
+    def _coerce_url(cls, v: object) -> str:
+        if v is None or v == "":
+            raise ValueError("url is required")
+        return str(v).strip()
 
 
 class ArticleList(BaseModel):

@@ -1,5 +1,10 @@
 # 模型调用处理中间层：负责大模型 API 接入、管理、调度
-from .client import get_llm_client, call_responses
+from .client import (
+    get_api_support_info,
+    get_llm_client,
+    call_responses,
+    supports_responses_api,
+)
 
 # 国产模型预设列表（与 config.DOMESTIC_LLM_BASE_URLS 一致，便于文档与 API 展示）
 SUPPORTED_DOMESTIC_PROVIDERS = (
@@ -12,4 +17,10 @@ SUPPORTED_DOMESTIC_PROVIDERS = (
     "minimax",    # MiniMax
 )
 
-__all__ = ["get_llm_client", "call_responses", "SUPPORTED_DOMESTIC_PROVIDERS"]
+__all__ = [
+    "get_llm_client",
+    "call_responses",
+    "supports_responses_api",
+    "get_api_support_info",
+    "SUPPORTED_DOMESTIC_PROVIDERS",
+]
