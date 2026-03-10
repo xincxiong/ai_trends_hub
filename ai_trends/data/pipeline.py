@@ -10,7 +10,6 @@ from zoneinfo import ZoneInfo
 
 from ..config import settings
 from ..models import Article
-from ..model import supports_responses_api
 from .crawler import CrawlWindow, fetch_raw_items
 from .cleaner import (
     raw_items_to_articles,
@@ -181,8 +180,8 @@ def run_pipeline() -> List[Article]:
     report_tz = getattr(settings, "report_tz", "Asia/Shanghai")
     start, end = _today_range_tz(report_tz, settings.window_days)
 
-    # 仅当支持 Responses API（含 web_search）时才走两阶段；否则用单阶段 + 知识生成
-    if two_stage and supports_responses_api():
+    # 配置为两阶段时先尝试两阶段（URL 召回+核验，会请求联网）；API 不支持则自动降级为单阶段
+    if two_stage:
         incoming = _run_two_stage_fetch()
     else:
         incoming = fetch_latest_articles()

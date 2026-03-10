@@ -67,11 +67,34 @@ export PYTHONPATH="${SCRIPT_DIR}${PYTHONPATH:+:$PYTHONPATH}"
 #############################
 # 抓取与数据（可选，有默认值）
 #############################
+# 时间窗口与条数
 # export AI_TRENDS_WINDOW_DAYS=2      # 抓取最近几天
 # export AI_TRENDS_MAX_ITEMS=400      # 单次最大条数
 # export AI_TRENDS_REPORT_TZ=Asia/Shanghai   # 时间窗口时区
+
+# 抓取模式
 # export AI_TRENDS_TWO_STAGE=true    # true=两阶段(召回+核验)，false=单阶段
-# export AI_TRENDS_LOCAL_REF_PATH=    # 本地参考样本 JSON 路径，用于去重与召回引导
-# export AI_TRENDS_NEWS_KEEP_DAYS=30 # 聚合文件保留最近 N 天
+
+# 本地参考样本（用于去重与召回引导）
+# export AI_TRENDS_LOCAL_REF_PATH=    # 本地参考样本 JSON 路径（例如 /path/to/local_news.json）
+# export AI_TRENDS_LOCAL_SAMPLE_SIZE=120  # 使用最近 N 条作为去重/召回参考
+
+# 输出控制
+# export AI_TRENDS_INCLUDE_EXISTING=true  # true=输出包含已存在并标记，false=仅输出新增
+
+# Stage A 召回（两阶段模式）
+# export AI_TRENDS_STAGE_A_PASSES=16          # 检索轮数
+# export AI_TRENDS_STAGE_A_MAX_URLS=420       # 去重后的 URL 上限
+# export AI_TRENDS_STAGE_A_PER_PASS_LIMIT=26  # 每轮最多召回 URL 数
+
+# Stage B 核验（两阶段模式）
+# export AI_TRENDS_VERIFY_BATCH_SIZE=10       # 每批核验的 URL 数
+# export AI_TRENDS_VERIFY_MIN_CONFIDENCE=0.74  # 置信度阈值（0~1）
+# export AI_TRENDS_VERIFY_REQUIRE_DATE=true   # true=必须核验出日期
+# export AI_TRENDS_STRICT_DOMAIN_AFTER_VERIFY=false  # 核验后是否严格域名白名单
+
+# 存储与增量
+# export AI_TRENDS_NEWS_BACKUP_BEFORE_MERGE=true  # 合并前是否备份 news.json
+# export AI_TRENDS_NEWS_KEEP_DAYS=30   # 聚合文件保留最近 N 天
 
 echo "AI Trends Hub 环境已加载 (SCRIPT_DIR=$SCRIPT_DIR)"

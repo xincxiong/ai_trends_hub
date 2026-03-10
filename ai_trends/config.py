@@ -12,14 +12,16 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # 国产模型 API 预设 Base URL（OpenAI 兼容端点）
 # 使用方式：设置 LLM_PROVIDER=zhipu 等，无需再设 LLM_API_BASE
+# 各厂商 API Base URL（OpenAI 兼容端点）；LLM_PROVIDER 对应时优先使用此处，否则用 LLM_API_BASE
 DOMESTIC_LLM_BASE_URLS: dict[str, str] = {
-    "zhipu": "https://open.bigmodel.cn/api/paas/v4/",           # 智谱 AI
-    "moonshot": "https://api.moonshot.cn/v1",                    # 月之暗面 Kimi
-    "dashscope": "https://dashscope.aliyuncs.com/api/v2/apps/protocols/compatible-mode/v1",         ##"https://coding.dashscope.aliyuncs.com/v1",  # 通义千问（coding 端点；兼容模式: https://dashscope.aliyuncs.com/compatible-mode/v1）
+    "openai": "https://api.openai.com/v1",                       # OpenAI 官方
+    "zhipu": "https://open.bigmodel.cn/api/paas/v4/",            # 智谱 AI
+    "moonshot": "https://api.moonshot.cn/v1",                     # 月之暗面 Kimi
+    "dashscope": "https://dashscope.aliyuncs.com/compatible-mode/v1",  # 通义千问（兼容模式）
     "doubao": "https://ark.cn-beijing.volces.com/api/v3",         # 豆包（火山引擎，区域可调）
-    "deepseek": "https://api.deepseek.com/v1",                   # DeepSeek
-    "minimax": "https://api.minimax.chat/v1",                    # MiniMax
-    "qwen": "https://dashscope.aliyuncs.com/compatible-mode/v1",   # 通义（同 dashscope）
+    "deepseek": "https://api.deepseek.com/v1",                    # DeepSeek
+    "minimax": "https://api.minimax.chat/v1",                     # MiniMax
+    "qwen": "https://dashscope.aliyuncs.com/compatible-mode/v1", # 通义（同 dashscope）
 }
 
 # 支持 OpenAI Responses API（含 web_search 联网搜索）的接入方式。

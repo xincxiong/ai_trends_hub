@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import sys
+import locale
+import httpx
 from types import SimpleNamespace
 from typing import Any, Dict, List, Optional
 
@@ -13,6 +15,14 @@ from ..config import (
     RESPONSES_API_SUPPORTED_PROVIDERS,
     settings,
 )
+
+# 强制使用 UTF-8 编码，解决 httpx 的 UnicodeEncodeError
+if sys.version_info >= (3, 7):
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+locale.setlocale(locale.LC_ALL, 'C.UTF-8') if 'C.UTF-8' in locale.locale_alias else locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 # 国产大模型仅提供 Chat Completions，不提供 Responses API；此集合与 DOMESTIC_LLM_BASE_URLS 一致
 DOMESTIC_PROVIDERS = frozenset(DOMESTIC_LLM_BASE_URLS.keys())
@@ -79,6 +89,7 @@ def get_llm_client() -> OpenAI:
     - 支持 LLM_API_KEY / LLM_API_BASE / AI_TRENDS_MODEL 自定义。
     - 国产模型：设置 LLM_PROVIDER=zhipu|moonshot|dashscope|doubao|deepseek|minimax|qwen
       即可使用对应厂商的 OpenAI 兼容端点，无需再配 LLM_API_BASE。
+    - 使用 httpx 客户端，强制 UTF-8 编码以避免 UnicodeEncodeError。
     """
     if not settings.llm_api_key:
         raise ValueError(
@@ -86,7 +97,12 @@ def get_llm_client() -> OpenAI:
             "请先配置：1) cp env.example.sh env.sh  2) 编辑 env.sh 填入 API Key  3) source env.sh  后再运行。"
         )
 
-    client_kwargs: Dict[str, Any] = {"api_key": settings.llm_api_key}
+    http_client = httpx.Client(
+        timeout=120.0,
+        headers={"Accept-Charset": "utf-8"},
+    )
+
+    client_kwargs: Dict[str, Any] = {"api_key": settings.llm_api_key, "http_client": http_client}
     base_url = _resolve_base_url()
     if base_url:
         client_kwargs["base_url"] = base_url
@@ -110,29 +126,33 @@ def call_responses(
 ):
     """
     统一调用入口：返回带 output_text 的响应对象。
-    - 国产大模型（LLM_PROVIDER 为 zhipu/moonshot/dashscope 等）：直接走 Chat Completions，无联网搜索。
-    - 其他（如 OpenAI）：优先 Responses API（支持 web_search），若 404 则降级为 Chat Completions。
+    - 优先尝试 Responses API（含 web_search 联网搜索），若 404 则自动降级为 Chat Completions。
+    - 国产模型也先尝试 Responses API，一般会 404 降级；若明确不支持可节省一次调用。
+    - 返回结果附带 actual_mode 属性，标记实际使用的模式（responses / chat）。
     """
     client = get_llm_client()
+    info = get_api_support_info()
+    provider = info['provider_kind']
 
-    # 国产大模型：不支持 Responses API，直接走 Chat Completions
-    if not supports_responses_api():
-        info = get_api_support_info()
+    # 如果参数明确不传 tools（如重试/修复场景），直接走 Chat 避免无意义调用
+    if tools is None:
         print(
-            f"当前接入 [{info['provider_kind']}]：{info['description']}",
+            f"当前接入 [{provider}]：不使用联网搜索，直接使用 Chat Completions（基于模型知识）。",
             file=sys.stderr,
         )
         try:
-            return _call_chat_completions(client, prompt)
+            result = _call_chat_completions(client, prompt)
+            result.actual_mode = "chat"
+            return result
         except AuthenticationError as e:
             base = _resolve_base_url() or "(OpenAI 默认)"
             raise RuntimeError(
-                f"API Key 认证失败（401）。当前使用：provider={info['provider_kind']}, base={base}。"
+                f"API Key 认证失败（401）。当前使用：provider={provider}, base={base}。"
                 "请确认：1) env.sh 里的 LLM_API_KEY 是否来自该厂商；2) 该 Key 在对应控制台是否有效、未过期；"
                 "3) 若用代理或自定义 Base，LLM_API_BASE 是否与 Key 所属服务一致。修改后请重新 source env.sh 再运行。"
             ) from e
 
-    # OpenAI 或自定义网关：优先 Responses API
+    # 尝试 Responses API
     try:
         resp = client.responses.create(
             model=settings.llm_model,
@@ -140,17 +160,26 @@ def call_responses(
             tools=tools,
             **extra_kwargs,
         )
+        resp.actual_mode = "responses"
+        print(
+            f"当前接入 [{provider}]：使用 Responses API（联网检索）。",
+            file=sys.stderr,
+        )
         return resp
     except NotFoundError:
         print(
-            "当前 API 不支持 Responses 接口，已降级为 Chat Completions（无联网搜索）。",
+            f"当前接入 [{provider}]：Responses API 不支持，已降级为 Chat Completions（基于模型知识，无联网检索）。",
             file=sys.stderr,
         )
-        return _call_chat_completions(client, prompt)
+        result = _call_chat_completions(client, prompt)
+        result.actual_mode = "chat"
+        return result
     except AuthenticationError as e:
+        base = _resolve_base_url() or "(OpenAI 默认)"
         raise RuntimeError(
-            "API Key 无效或已失效（401）。请检查 env.sh 中的 LLM_API_KEY / OPENAI_API_KEY 是否正确，"
-            "或到对应平台（如 platform.openai.com、智谱/DeepSeek 等）重新获取 Key 后更新 env.sh 并 source 加载。"
+            f"API Key 认证失败（401）。当前使用：provider={provider}, base={base}。"
+            "请确认：1) env.sh 里的 LLM_API_KEY 是否来自该厂商；2) 该 Key 在对应控制台是否有效、未过期；"
+            "3) 若用代理或自定义 Base，LLM_API_BASE 是否与 Key 所属服务一致。修改后请重新 source env.sh 再运行。"
         ) from e
     except RateLimitError as e:
         err_msg = str(e).lower()

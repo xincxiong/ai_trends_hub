@@ -6,7 +6,8 @@ import re
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
-from ..model import call_responses, supports_responses_api
+from ..model import call_responses
+from .domains import get_preferred_domains_hint
 
 
 @dataclass
@@ -21,7 +22,8 @@ def build_crawl_prompt(win: CrawlWindow, use_web_search: bool = True) -> str:
         return f"""
 你是一名 AI 行业情报编辑，负责从全球主流网站中【联网检索】过去几天 ({S}) 内的 AI 动态。
 
-请通过搜索（工具会帮你）召回并阅读网页，输出一批结构化新闻条目，重点覆盖：
+请优先从以下项目配置的权威信源检索并采集（可配合站点内搜索）：{get_preferred_domains_hint()}
+在以上站点及同类媒体、厂商官网、学术与开源站点中召回并阅读网页，输出一批结构化新闻条目，重点覆盖：
 - AI 硬件：GPU/ASIC/TPU/NPU、AI 服务器、存储与网络、芯片制造与封装
 - AI 软件：大模型/开源模型、框架与 SDK、Agent 平台、工具链与部署方案
 - AI 行业应用：医疗/金融/制造/零售/教育/自动驾驶/广告等实际落地案例
@@ -111,10 +113,10 @@ def _extract_json_array(text: str) -> str | None:
 
 
 def fetch_raw_items(win: CrawlWindow) -> List[Dict[str, Any]]:
-    """通过模型中间层抓取并返回原始 JSON 对象列表。有 Responses API 时联网检索，否则基于模型知识生成。"""
-    use_web = supports_responses_api()
+    """通过模型中间层抓取并返回原始 JSON 对象列表。始终请求联网检索；若 API 不支持则自动降级为基于模型知识。"""
+    use_web = True  # 始终请求 web_search，由 call_responses 根据 API 能力尝试或降级
     prompt = build_crawl_prompt(win, use_web_search=use_web)
-    tools = [{"type": "web_search"}] if use_web else None
+    tools = [{"type": "web_search"}]
     resp = call_responses(prompt=prompt, tools=tools)
     raw = getattr(resp, "output_text", None) or ""
 

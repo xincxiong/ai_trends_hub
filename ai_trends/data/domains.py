@@ -75,6 +75,29 @@ LLM_PRIMARY_SOURCES = {
 }
 SECONDARY_DOMAINS = SECONDARY_DOMAINS | LLM_PRIMARY_SOURCES
 
+def get_preferred_domains_hint(max_items: int = 30) -> str:
+    """返回用于提示词的优先检索域名列表（逗号分隔），便于模型联网时优先从这些站点采集。"""
+    combined = CORE_DOMAINS | SECONDARY_DOMAINS
+    order = (
+        "reuters.com", "bloomberg.com", "techcrunch.com", "venturebeat.com",
+        "arxiv.org", "nvidia.com", "amd.com", "intel.com", "tsmc.com",
+        "digitimes.com", "semianalysis.com", "huggingface.co", "github.com",
+    )
+    seen = set()
+    result = []
+    for d in order:
+        if d in combined and d not in seen and len(result) < max_items:
+            result.append(d)
+            seen.add(d)
+    for d in sorted(combined):
+        if len(result) >= max_items:
+            break
+        if d not in seen:
+            result.append(d)
+            seen.add(d)
+    return ", ".join(result)
+
+
 # 重点渠道公司名称（用于查询与抽取）
 CHANNEL_VENDOR_KEYWORDS = [
     "GIGABYTE", "Gigabyte", "技嘉",

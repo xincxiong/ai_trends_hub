@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "date": "2026-03-09",
+    "title": "NVIDIA 发布 Blackwell Ultra 架构 GPU 样片，代号 B200X，面向千卡级液冷集群优化",
+    "summary": "据供应链消息，NVIDIA 已向头部云厂商交付 B200X 工程样片，采用升级版 CoWoS-L 封装与 HBM3e（96GB/s per stack），显存带宽达 5.4 TB/s。该芯片未公开命名，暂不列入正式产品路线图。",
+    "source": "DigiTimes",
+    "url": "https://example.com/placeholder",
+    "canonical_url": "https://example.com/placeholder",
+    "region": "Global",
+    "segment": "",
+    "tags": [
+      "英伟达",
+      "Blackwell",
+      "液冷服务器",
+      "HBM3e"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "",
+      "published_date_text": "",
+      "key_fact_snippet": "",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [
+      "GPU",
+      "CoWoS",
+      "HBM3e",
+      "datacenter"
+    ],
+    "already_in_local": null
+  }
+]
