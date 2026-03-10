@@ -1,4 +1,4 @@
-"""数据抓取：通过模型中间层获取原始内容。"""
+"""数据抓取：通过模型中间层获取原始内容。支持 Responses API（联网检索）与 Chat Completions（基于知识）。"""
 from __future__ import annotations
 
 import json
@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
-from ..model import call_responses
+from ..model import call_responses, supports_responses_api
 
 
 @dataclass
@@ -15,9 +15,10 @@ class CrawlWindow:
     end: str    # YYYY-MM-DD
 
 
-def build_crawl_prompt(win: CrawlWindow) -> str:
+def build_crawl_prompt(win: CrawlWindow, use_web_search: bool = True) -> str:
     S = f"{win.start}..{win.end}"
-    return f"""
+    if use_web_search:
+        return f"""
 你是一名 AI 行业情报编辑，负责从全球主流网站中【联网检索】过去几天 ({S}) 内的 AI 动态。
 
 请通过搜索（工具会帮你）召回并阅读网页，输出一批结构化新闻条目，重点覆盖：
@@ -58,6 +59,41 @@ def build_crawl_prompt(win: CrawlWindow) -> str:
 请输出不超过 100 条高质量新闻，严格 JSON 数组。
 """.strip()
 
+    # 仅 Chat Completions 时：基于模型知识生成，无联网
+    return f"""
+你是一名 AI 行业情报编辑。当前无法联网检索，请基于你的知识库，列出近期（约 {S} 时间段）可能出现的或已知的 AI/GPU 相关新闻、动态、产品发布与行业事件。
+
+重点覆盖：
+- AI 硬件：GPU/ASIC/TPU、AI 服务器、芯片与封装（如 NVIDIA/AMD/Intel、HBM、CoWoS）
+- AI 软件：大模型、开源模型、框架与 Agent 平台
+- AI 行业应用与融资并购、科研进展（新模型、顶会、论文）
+
+【要求】
+- 每条尽量给出真实存在过的来源域名或媒体名（如 reuters.com、techcrunch.com、arxiv.org），url 可填该站点根域名或合理路径
+- 若无法确定具体链接，url 可填 https://example.com/placeholder，不要编造不存在的 URL 路径
+- 日期填你已知或合理推断的 YYYY-MM-DD
+
+【输出格式】
+- 严格输出 JSON 数组，不要 markdown，不要额外说明
+- 数组中每个对象字段：
+  - url: 原文链接（可合理推断）
+  - canonical_url: 与 url 相同即可
+  - date: YYYY-MM-DD
+  - title: 中文新闻标题
+  - summary: 中文 2-3 句摘要
+  - source: 媒体/站点名
+  - region: Global/China/US/EU/APAC
+  - main_category: 五选一 ai_hardware / ai_software / ai_application / ai_funding_ma / ai_research
+  - sub_categories: 2-5 个细分类标签（字符串数组）
+  - segment: 可空字符串
+  - tags: 2-5 个中文标签数组
+  - event_type: fact/analysis/technical 三选一
+  - metrics: 如无则为 null
+  - evidence: 对象（title_on_page, published_date_text, key_fact_snippet, pricing_or_leadtime_snippet），可填空字符串
+
+请输出不超过 80 条，严格 JSON 数组。
+""".strip()
+
 
 def _extract_json_array(text: str) -> str | None:
     text = (text or "").strip()
@@ -75,11 +111,12 @@ def _extract_json_array(text: str) -> str | None:
 
 
 def fetch_raw_items(win: CrawlWindow) -> List[Dict[str, Any]]:
-    """通过模型中间层抓取并返回原始 JSON 对象列表。"""
-    prompt = build_crawl_prompt(win)
-    tools = [{"type": "web_search"}]
+    """通过模型中间层抓取并返回原始 JSON 对象列表。有 Responses API 时联网检索，否则基于模型知识生成。"""
+    use_web = supports_responses_api()
+    prompt = build_crawl_prompt(win, use_web_search=use_web)
+    tools = [{"type": "web_search"}] if use_web else None
     resp = call_responses(prompt=prompt, tools=tools)
-    raw = resp.output_text or ""
+    raw = getattr(resp, "output_text", None) or ""
 
     json_text = _extract_json_array(raw)
     if not json_text:

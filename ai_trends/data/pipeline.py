@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 
 from ..config import settings
 from ..models import Article
+from ..model import supports_responses_api
 from .crawler import CrawlWindow, fetch_raw_items
 from .cleaner import (
     raw_items_to_articles,
@@ -173,12 +174,15 @@ def fetch_latest_articles_two_stage() -> List[Article]:
 
 
 def run_pipeline() -> List[Article]:
-    """执行一次：抓取 -> 清洗 -> 保存快照 -> 与历史合并去重 -> 写入聚合文件。"""
+    """执行一次：抓取 -> 清洗 -> 保存快照 -> 与历史合并去重 -> 写入聚合文件。
+    支持 Responses API 时可用两阶段（URL 召回+核验）；仅 Chat Completions 时自动走单阶段（基于知识生成）。
+    """
     two_stage = getattr(settings, "two_stage_fetch", True)
     report_tz = getattr(settings, "report_tz", "Asia/Shanghai")
     start, end = _today_range_tz(report_tz, settings.window_days)
 
-    if two_stage:
+    # 仅当支持 Responses API（含 web_search）时才走两阶段；否则用单阶段 + 知识生成
+    if two_stage and supports_responses_api():
         incoming = _run_two_stage_fetch()
     else:
         incoming = fetch_latest_articles()

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-"""数据层调用 LLM 的通用封装：解析 JSON 数组、联网调用。"""
+"""数据层调用 LLM 的通用封装：解析 JSON 数组。支持 Responses API（联网）与 Chat Completions。"""
 from __future__ import annotations
 
 import json
 import re
 from typing import Any, Dict, List, Optional
 
-from ..model import call_responses
+from ..model import call_responses, supports_responses_api
 
 
 def extract_json_array(text: str) -> Optional[str]:
@@ -38,8 +38,9 @@ def call_model_json_array(
     pass_name: str = "",
     use_web_search: bool = True,
 ) -> List[Dict[str, Any]]:
-    """调用模型并解析输出为 JSON 数组；失败时尝试一次修复解析。"""
-    tools = [{"type": "web_search"}] if use_web_search else None
+    """调用模型并解析输出为 JSON 数组；失败时尝试一次修复解析。仅支持 Responses API 时才会传 web_search。"""
+    use_web = use_web_search and supports_responses_api()
+    tools = [{"type": "web_search"}] if use_web else None
     resp = call_responses(prompt=prompt, tools=tools)
     raw = getattr(resp, "output_text", None) or ""
 
