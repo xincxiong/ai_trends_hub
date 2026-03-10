@@ -1,11 +1,12 @@
+"""数据抓取：通过模型中间层获取原始内容。"""
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
-from .config import settings
-from .llm import call_responses
+from ..model import call_responses
 
 
 @dataclass
@@ -47,28 +48,12 @@ def build_crawl_prompt(win: CrawlWindow) -> str:
     - ai_application（各行业的实际应用）
     - ai_funding_ma（融资 / 投资 / 并购 / 上市 / 估值）
     - ai_research（科研进展 / 新算法 / 强化学习 / Agent / 多智能体 / 评测基准）
-  - sub_categories: 2-5 个细分类标签（字符串数组），例如：
-    - 对硬件：["GPU","AI server","HBM","inference accelerator"]
-    - 对软件：["LLM","open-source model","MLOps","agent platform"]
-    - 对应用：["医疗","自动驾驶","广告推荐","工业质检"]
-    - 对融资并购：["Series A","acquisition","strategic investment"]
-    - 对科研：["RL","offline RL","model-based RL","multi-agent","agent","benchmark","NeurIPS 2026"]
-  - segment: 可选的简要业务/研究分段（如 "AI芯片","云计算","强化学习","Agent 系统"），可空字符串
+  - sub_categories: 2-5 个细分类标签（字符串数组）
+  - segment: 可选的简要业务/研究分段，可空字符串
   - tags: 2-5 个中文标签数组
   - event_type: fact/analysis/technical 三选一
-  - metrics: 如无结构化数值信息则为 null；有的话为对象：
-    - metric_type: spot_price/contract_price/cost_trend/lead_time/bom_cost/tco 等
-    - item: 例如 H100/H200/GB200/HBM3e/DDR5/GDDR6/液冷 等
-    - value: 数值或区间（字符串）
-    - unit: 单位（USD/台/周/月/% 等）
-    - context: 1 句上下文说明（必须来自原文）
-    - channel_vendor: 若涉及渠道/厂商则填公司名，否则空字符串
-    - geo: 报价/交期对应地区（US/China/...）
-  - evidence: 用于真实性校验的证据对象：
-    - title_on_page: 原文标题（原文语言）
-    - published_date_text: 页面上显示的日期原文
-    - key_fact_snippet: 关键事实的原文短句
-    - pricing_or_leadtime_snippet: 若有价格/交期信息则给一段原文，否则空字符串
+  - metrics: 如无则为 null；有则为对象（metric_type, item, value, unit, context, channel_vendor, geo）
+  - evidence: 对象（title_on_page, published_date_text, key_fact_snippet, pricing_or_leadtime_snippet）
 
 请输出不超过 100 条高质量新闻，严格 JSON 数组。
 """.strip()
@@ -80,8 +65,6 @@ def _extract_json_array(text: str) -> str | None:
         return None
     if text.startswith("[") and text.endswith("]"):
         return text
-    import re
-
     m = re.search(r"\[\s*\{.*\}\s*\]", text, flags=re.S)
     if m:
         return m.group(0)
@@ -92,10 +75,7 @@ def _extract_json_array(text: str) -> str | None:
 
 
 def fetch_raw_items(win: CrawlWindow) -> List[Dict[str, Any]]:
-    """
-    只负责“通过 OpenAI + web_search 抓取并返回原始 JSON 对象列表”，
-    不做 Pydantic 校验与去重，便于与上层 pipeline 解耦。
-    """
+    """通过模型中间层抓取并返回原始 JSON 对象列表。"""
     prompt = build_crawl_prompt(win)
     tools = [{"type": "web_search"}]
     resp = call_responses(prompt=prompt, tools=tools)
@@ -109,9 +89,4 @@ def fetch_raw_items(win: CrawlWindow) -> List[Dict[str, Any]]:
     if not isinstance(data, list):
         raise ValueError("模型输出不是 JSON 数组。")
 
-    items: List[Dict[str, Any]] = []
-    for x in data:
-        if isinstance(x, dict):
-            items.append(x)
-    return items
-
+    return [x for x in data if isinstance(x, dict)]

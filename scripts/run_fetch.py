@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from ai_trends.pipeline import run_pipeline
+from ai_trends.data import run_pipeline
 
 
 def main() -> None:

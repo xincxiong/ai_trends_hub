@@ -5,7 +5,7 @@ import uvicorn
 
 def main() -> None:
     uvicorn.run(
-        "ai_trends.api:app",
+        "ai_trends.app.api:app",
         host="0.0.0.0",
         port=8000,
         reload=False,

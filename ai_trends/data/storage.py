@@ -1,3 +1,4 @@
+"""数据存储：读写、去重、快照。"""
 from __future__ import annotations
 
 import json
@@ -5,20 +6,19 @@ import re
 from pathlib import Path
 from typing import Iterable, List, Tuple
 
-from .models import Article
+from ..models import Article
 
 
 def _norm_title(t: str) -> str:
     t = (t or "").strip().lower()
     t = re.sub(r"\s+", " ", t)
-    t = re.sub(r"[“”\"'’`]", "", t)
+    t = re.sub(r"[""\"'’`]", "", t)
     t = re.sub(r"[^a-z0-9\u4e00-\u9fa5 ]+", " ", t)
     t = re.sub(r"\s+", " ", t).strip()
     return t
 
 
 def _canonicalize_url(u: str) -> str:
-    # 简化版 canonical URL，只做首尾空格与末尾斜杠处理
     u = (u or "").strip()
     if u.endswith("/"):
         u = u[:-1]
@@ -77,7 +77,5 @@ def merge_articles(existing: List[Article], incoming: List[Article]) -> List[Art
         ex_title.add(nt)
         merged.append(art)
 
-    # 按日期倒序
     merged.sort(key=lambda a: (a.date, a.source or ""), reverse=True)
     return merged
-
