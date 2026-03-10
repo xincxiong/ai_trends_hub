@@ -32,6 +32,7 @@ ai_trends_hub/
 ├── data/
 │   ├── news.json         # 聚合后的新闻数据（运行后生成）
 │   └── snapshots/        # 每次抓取的结构化快照
+├── env.example.sh        # 环境配置示例（复制为 env.sh 后编辑并 source 加载）
 ├── requirements.txt
 └── README.md
 ```
@@ -65,7 +66,36 @@ conda activate ai-trends-hub
 pip install -r requirements.txt
 ```
 
-2. 配置环境变量（大模型 API）：
+2. 配置环境变量（大模型 API）
+
+**推荐：使用 `env.example.sh` 统一配置**
+
+项目根目录下的 `env.example.sh` 已集中所有环境变量，按下列方式执行即可：
+
+```bash
+cd /mnt/cloud_disk/ai_trends_hub
+
+# 1）复制为本地配置（不要提交 env.sh）
+cp env.example.sh env.sh
+
+# 2）编辑 env.sh：取消注释你要用的配置块（OpenAI 或某一国产模型），并填入真实 API Key 与模型名
+vim env.sh   # 或 nano / 其他编辑器
+
+# 3）在当前 shell 中加载环境（每次新开终端需重新执行）
+source env.sh
+
+# 4）之后可直接运行抓取或 API
+python scripts/run_fetch.py
+python scripts/run_api.py
+```
+
+说明：
+
+- 脚本内已包含「方式一：OpenAI / 自定义网关」和「方式二：国产模型（智谱、月之暗面、通义、DeepSeek、豆包、MiniMax）」等示例，只需取消对应注释并填写 Key。
+- 必须使用 `source env.sh` 加载，不能 `bash env.sh`，否则变量不会传入当前 shell。
+- 若需临时生效，可在一行内完成：`source env.sh && python scripts/run_fetch.py`。
+
+**手动配置**（不用脚本时）可设以下变量：
 
 - `LLM_API_KEY` 或 `OPENAI_API_KEY`：API 密钥  
 - `LLM_API_BASE`（可选）：自定义 Base URL  
