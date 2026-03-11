@@ -45,10 +45,15 @@ def verify_urls(url_items: List[Dict[str, Any]], start: str, end: str) -> List[D
 - source: 核验后的媒体/站点名
 - summary: 中文 2-3 句（事实，不推测）
 - region: Global/China/US/EU/APAC
+- main_category: 五选一（必填）ai_hardware / ai_software / ai_application / ai_funding_ma / ai_research
+  - 行业落地、垂直应用、企业案例、医疗/金融/制造/教育等 → ai_application
+  - 论文、顶会、新算法、评测、开源模型研究 → ai_research
 - segment: 例如
   AI芯片/云计算/数据中心/投融资/并购/出口管制/软件生态/供应链
   大模型发布/大模型开源/推理与部署/Agent工具链/国产GPU/智算中心
   渠道与现货/内存与成本/采购与TCO
+  行业应用与落地/医疗金融制造教育自动驾驶
+  科研与算法/论文/顶会/评测基准
 - tags: 2-5 个中文标签
 - event_type: fact/analysis/technical（三选一）
 - metrics: 仅渠道/成本/采购类填写，否则为 null

@@ -23,12 +23,12 @@ def build_crawl_prompt(win: CrawlWindow, use_web_search: bool = True) -> str:
 你是一名 AI 行业情报编辑，负责从全球主流网站中【联网检索】过去几天 ({S}) 内的 AI 动态。
 
 请优先从以下项目配置的权威信源检索并采集（可配合站点内搜索）：{get_preferred_domains_hint()}
-在以上站点及同类媒体、厂商官网、学术与开源站点中召回并阅读网页，输出一批结构化新闻条目，重点覆盖：
+在以上站点及同类媒体、厂商官网、学术与开源站点中召回并阅读网页，输出一批结构化新闻条目。**必须均衡覆盖五类**，尤其不要遗漏：
 - AI 硬件：GPU/ASIC/TPU/NPU、AI 服务器、存储与网络、芯片制造与封装
 - AI 软件：大模型/开源模型、框架与 SDK、Agent 平台、工具链与部署方案
-- AI 行业应用：医疗/金融/制造/零售/教育/自动驾驶/广告等实际落地案例
+- **行业应用与落地产品**：医疗/金融/制造/零售/教育/自动驾驶/广告等垂直行业实际案例、企业部署与产品落地（main_category 填 ai_application）
 - AI 融资并购：与 AI 相关的融资轮次、并购交易、投资与估值变动
-- AI 科研：新算法/架构（如 Transformer 变体、MoE、Diffusion 等）、强化学习、决策优化、Agent 与多智能体系统、评测基准/论文/顶会进展
+- **科研与算法**：新算法/架构（Transformer 变体、MoE、Diffusion）、强化学习、Agent 与多智能体、评测基准、论文与顶会（NeurIPS/ICLR/ICML/arXiv）（main_category 填 ai_research）
 
 【重要要求】
 - 必须基于真实网页内容或论文页面，不要编造

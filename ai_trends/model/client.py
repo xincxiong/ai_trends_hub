@@ -8,7 +8,7 @@ from types import SimpleNamespace
 from typing import Any, Dict, List, Optional
 
 from openai import OpenAI
-from openai import AuthenticationError, NotFoundError, RateLimitError
+from openai import AuthenticationError, NotFoundError, RateLimitError, BadRequestError
 
 from ..config import (
     DOMESTIC_LLM_BASE_URLS,
@@ -151,6 +151,20 @@ def call_responses(
                 "请确认：1) env.sh 里的 LLM_API_KEY 是否来自该厂商；2) 该 Key 在对应控制台是否有效、未过期；"
                 "3) 若用代理或自定义 Base，LLM_API_BASE 是否与 Key 所属服务一致。修改后请重新 source env.sh 再运行。"
             ) from e
+        except BadRequestError as e:
+            base = _resolve_base_url() or "(OpenAI 默认)"
+            msg = str(e)
+            if "Arrearage" in msg or "overdue-payment" in msg:
+                raise RuntimeError(
+                    "当前模型服务账户处于欠费或停用状态（400 Arrearage）。\n"
+                    f"当前使用：provider={provider}, base={base}。\n"
+                    "请登录对应厂商控制台（如阿里云 Model Studio / DashScope）检查账单与欠费情况，"
+                    "完成充值或清理欠费后再重试，或在 env.sh 中切换到一个可用的 LLM_PROVIDER + LLM_API_KEY。"
+                ) from e
+            raise RuntimeError(
+                "调用 Chat Completions 失败（400 BadRequest）。请检查账号状态与错误信息，"
+                f"当前使用：provider={provider}, base={base}。"
+            ) from e
 
     # 尝试 Responses API
     try:
@@ -180,6 +194,20 @@ def call_responses(
             f"API Key 认证失败（401）。当前使用：provider={provider}, base={base}。"
             "请确认：1) env.sh 里的 LLM_API_KEY 是否来自该厂商；2) 该 Key 在对应控制台是否有效、未过期；"
             "3) 若用代理或自定义 Base，LLM_API_BASE 是否与 Key 所属服务一致。修改后请重新 source env.sh 再运行。"
+        ) from e
+    except BadRequestError as e:
+        base = _resolve_base_url() or "(OpenAI 默认)"
+        msg = str(e)
+        if "Arrearage" in msg or "overdue-payment" in msg:
+            raise RuntimeError(
+                "当前模型服务账户处于欠费或停用状态（400 Arrearage）。\n"
+                f"当前使用：provider={provider}, base={base}。\n"
+                "请登录对应厂商控制台（如阿里云 Model Studio / DashScope）检查账单与欠费情况，"
+                "完成充值或清理欠费后再重试，或在 env.sh 中切换到一个可用的 LLM_PROVIDER + LLM_API_KEY。"
+            ) from e
+        raise RuntimeError(
+            "调用 Responses API 失败（400 BadRequest）。请检查账号状态与错误信息，"
+            f"当前使用：provider={provider}, base={base}。"
         ) from e
     except RateLimitError as e:
         err_msg = str(e).lower()

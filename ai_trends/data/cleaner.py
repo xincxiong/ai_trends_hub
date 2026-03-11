@@ -149,7 +149,9 @@ def verified_items_to_articles(
             et = "fact"
 
         segment = (item.get("segment") or "").strip()
-        main_cat = _segment_to_main_category(segment)
+        main_cat = (item.get("main_category") or "").strip().lower()
+        if main_cat not in ("ai_hardware", "ai_software", "ai_application", "ai_funding_ma", "ai_research"):
+            main_cat = _segment_to_main_category(segment)
         if not main_cat:
             main_cat = "ai_hardware"
 

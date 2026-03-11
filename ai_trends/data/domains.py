@@ -75,13 +75,34 @@ LLM_PRIMARY_SOURCES = {
 }
 SECONDARY_DOMAINS = SECONDARY_DOMAINS | LLM_PRIMARY_SOURCES
 
+# 行业应用与落地：垂直行业媒体、案例与报告
+APPLICATION_ORIENTED_DOMAINS = {
+    "modernhealthcare.com", "medscape.com", "fiercehealthcare.com",
+    "finextra.com", "americanbanker.com", "bankingexchange.com",
+    "manufacturing.net", "industryweek.com", "roboticsbusinessreview.com",
+    "retaildive.com", "chainstoreage.com", "emarketer.com",
+    "edsurge.com", "techcrunch.com", "venturebeat.com",
+    "adweek.com", "marketingdive.com", "martech.org",
+    "zdnet.com", "cio.com", "infoworld.com", "computerworld.com",
+}
+# 科研与算法：预印本、顶会、评测与论文
+RESEARCH_ORIENTED_DOMAINS = {
+    "arxiv.org", "openreview.net", "paperswithcode.com",
+    "nature.com", "science.org",
+    "neurips.cc", "iclr.cc", "icml.cc", "acm.org",
+    "huggingface.co", "github.com", "blogs.microsoft.com",
+}
+SECONDARY_DOMAINS = SECONDARY_DOMAINS | APPLICATION_ORIENTED_DOMAINS | RESEARCH_ORIENTED_DOMAINS
+
 def get_preferred_domains_hint(max_items: int = 30) -> str:
     """返回用于提示词的优先检索域名列表（逗号分隔），便于模型联网时优先从这些站点采集。"""
     combined = CORE_DOMAINS | SECONDARY_DOMAINS
     order = (
         "reuters.com", "bloomberg.com", "techcrunch.com", "venturebeat.com",
-        "arxiv.org", "nvidia.com", "amd.com", "intel.com", "tsmc.com",
-        "digitimes.com", "semianalysis.com", "huggingface.co", "github.com",
+        "arxiv.org", "openreview.net", "paperswithcode.com", "huggingface.co", "github.com",
+        "nvidia.com", "amd.com", "intel.com", "tsmc.com",
+        "digitimes.com", "semianalysis.com",
+        "zdnet.com", "finextra.com", "edsurge.com", "modernhealthcare.com",
     )
     seen = set()
     result = []

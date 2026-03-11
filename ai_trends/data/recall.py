@@ -68,6 +68,29 @@ def build_pass_queries(start: str, end: str) -> List[Dict[str, Any]]:
             f"semiconductor HBM packaging funding {S}",
             f"AI startup funding model release {S}",
         ]},
+        {"name": "industry-application", "queries": [
+            f"AI healthcare medical diagnosis drug discovery {S}",
+            f"AI finance fintech trading risk automation {S}",
+            f"AI manufacturing smart factory industrial {S}",
+            f"AI retail ecommerce recommendation personalization {S}",
+            f"AI education edtech learning {S}",
+            f"autonomous driving self-driving AI vehicle {S}",
+            f"AI advertising marketing campaign {S}",
+            f"enterprise AI deployment use case {S}",
+            f"vertical AI application industry {S}",
+            f"AI 医疗 金融 制造 教育 落地 应用 {S}",
+        ]},
+        {"name": "research-algorithms", "queries": [
+            f"arXiv AI ML paper 2024 2025 {S}",
+            f"NeurIPS ICLR ICML 2024 2025 AI {S}",
+            f"Transformer MoE diffusion new architecture {S}",
+            f"reinforcement learning LLM agent {S}",
+            f"AI benchmark evaluation LLM {S}",
+            f"new AI model release paper preprint {S}",
+            f"large language model research paper {S}",
+            f"multimodal agent reasoning paper {S}",
+            f"AI 论文 顶会 开源 模型 评测 {S}",
+        ]},
     ]
 
     if getattr(settings, "enable_channel_monitoring", True):
@@ -116,17 +139,33 @@ def recall_urls_for_pass(
     local_refs: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     per_pass = getattr(settings, "stage_a_per_pass_limit", 26)
+    focus_extra = ""
+    if "industry" in pass_name or "application" in pass_name:
+        focus_extra = """
+【本轮回召重点：行业应用与落地产品】
+- 医疗/健康、金融/风控、制造/工厂、零售/电商、教育、自动驾驶、广告/营销等垂直行业
+- 企业部署案例、实际落地产品与解决方案、行业报告与动态
+"""
+    elif "research" in pass_name or "algorithm" in pass_name:
+        focus_extra = """
+【本轮回召重点：科研与算法】
+- 论文与预印本（arXiv、OpenReview、顶会）、新模型/新架构发布
+- 强化学习、Agent、多模态、推理与评测基准
+"""
+    else:
+        focus_extra = """
+【特别关注：你必须尽量覆盖】
+- GPU 渠道链条信号：AIB/系统商/分销商（GIGABYTE/技嘉、Supermicro、ASUS、MSI 等）
+- 渠道报价/现货/交期/配额/库存
+- 供应链与采购成本：HBM3e/DRAM/DDR5/GDDR、CoWoS/封装/ABF基板、交付周期变化
+"""
     prompt = f"""
 你是一名 AI/GPU 行业情报召回助手。请基于联网搜索，在时间窗口 {start}~{end} 召回候选【原文 URL】。
 你只需要输出候选 URL 列表（URL + 少量线索），不要写完整新闻摘要，不要编造。
 
 【本地已收录样本（用于避免重复方向）】
 {json.dumps(local_refs, ensure_ascii=False, indent=2)}
-
-【特别关注：你必须尽量覆盖】
-- GPU 渠道链条信号：AIB/系统商/分销商（GIGABYTE/技嘉、Supermicro、ASUS、MSI 等）
-- 渠道报价/现货/交期/配额/库存
-- 供应链与采购成本：HBM3e/DRAM/DDR5/GDDR、CoWoS/封装/ABF基板、交付周期变化
+{focus_extra}
 
 【输出要求】
 - 只输出严格 JSON 数组，不要 markdown，不要解释
