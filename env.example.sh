@@ -8,7 +8,7 @@
 #   4. 运行：python scripts/run_fetch.py  或  python scripts/run_api.py
 #
 # 接口支持：方式一（OpenAI/自定义网关）支持 Responses API（含 web_search 联网搜索）；
-#          方式二（国产模型）仅支持 Chat Completions，无联网搜索，结果基于模型知识。
+#          方式二（国产模型）通过适配层也可联网：先外部检索再注入 prompt，需配置 SERPER_API_KEY 或使用 DuckDuckGo 兜底。
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
@@ -96,5 +96,9 @@ export PYTHONPATH="${SCRIPT_DIR}${PYTHONPATH:+:$PYTHONPATH}"
 # 存储与增量
 # export AI_TRENDS_NEWS_BACKUP_BEFORE_MERGE=true  # 合并前是否备份 news.json
 # export AI_TRENDS_NEWS_KEEP_DAYS=30   # 聚合文件保留最近 N 天
+
+# Chat Completions 适配层联网检索（国产模型等无 Responses API 时生效）
+# export SERPER_API_KEY="你的-Serper-Key"   # 可选，不设则用 DuckDuckGo 免费检索
+# export AI_TRENDS_WEB_SEARCH_MAX_RESULTS=25   # 单次检索条数上限（默认 25）
 
 echo "AI Trends Hub 环境已加载 (SCRIPT_DIR=$SCRIPT_DIR)"

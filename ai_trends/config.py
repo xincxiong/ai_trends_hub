@@ -74,6 +74,11 @@ class Settings:
     news_backup_before_merge: bool = True
     news_keep_days: int = int(os.getenv("AI_TRENDS_NEWS_KEEP_DAYS", "30"))
 
+    # Chat Completions 适配层：外部联网检索（无 Responses API 时使用）
+    # 可选：SERPER_API_KEY 使用 Serper 检索；不设则用 DuckDuckGo 免费检索
+    serper_api_key: str = (os.getenv("SERPER_API_KEY") or "").strip()
+    web_search_max_results: int = int(os.getenv("AI_TRENDS_WEB_SEARCH_MAX_RESULTS", "25"))
+
     # 基本类别
     main_categories: tuple[str, ...] = (
         "ai_hardware",

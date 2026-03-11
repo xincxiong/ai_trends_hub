@@ -15,6 +15,7 @@ from ..config import (
     RESPONSES_API_SUPPORTED_PROVIDERS,
     settings,
 )
+from .web_search_adapter import run_web_search_for_prompt
 
 # 强制使用 UTF-8 编码，解决 httpx 的 UnicodeEncodeError
 if sys.version_info >= (3, 7):
@@ -181,6 +182,39 @@ def call_responses(
         )
         return resp
     except NotFoundError:
+        # 适配层：若请求了 web_search，则通过外部检索 + 注入 prompt 模拟 Responses API 联网能力
+        want_web = (
+            tools is not None
+            and isinstance(tools, list)
+            and any(
+                isinstance(t, dict) and t.get("type") == "web_search"
+                for t in tools
+            )
+        )
+        if want_web:
+            print(
+                f"当前接入 [{provider}]：Responses API 不支持，使用 Chat Completions + 外部联网检索适配层。",
+                file=sys.stderr,
+            )
+            search_text = run_web_search_for_prompt(prompt)
+            if search_text:
+                enriched_prompt = f"""以下是通过联网检索得到的参考内容（请据此整理并输出结构化结果，勿编造）：
+
+{search_text}
+
+---
+请严格根据以上参考内容完成以下任务（若参考内容与任务时间范围不完全一致，以任务要求为准）：
+
+{prompt}"""
+                result = _call_chat_completions(client, enriched_prompt)
+            else:
+                print(
+                    "外部检索未返回结果，将仅基于模型知识生成。",
+                    file=sys.stderr,
+                )
+                result = _call_chat_completions(client, prompt)
+            result.actual_mode = "chat_web_adapter"
+            return result
         print(
             f"当前接入 [{provider}]：Responses API 不支持，已降级为 Chat Completions（基于模型知识，无联网检索）。",
             file=sys.stderr,
