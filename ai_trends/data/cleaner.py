@@ -9,6 +9,7 @@ from ..models import Article, Evidence, Metrics
 from ..model import call_responses
 from .url_utils import (
     canonicalize_url,
+    china_official_url_allowed,
     domain_allowed,
     force_source_normalization,
     get_domain,
@@ -40,10 +41,17 @@ def _segment_to_main_category(segment: str) -> str:
 
 
 def raw_items_to_articles(raw_items: List[Dict[str, Any]], max_items: int = 0) -> List[Article]:
-    """将抓取得到的原始 dict 列表清洗为 Article 列表（单阶段抓取用）。"""
+    """将抓取得到的原始 dict 列表清洗为 Article 列表（单阶段抓取用）。仅保留 domains 白名单内且通过中国官方 docs 规则的 URL。"""
     items: List[Article] = []
     for x in raw_items:
         if not isinstance(x, dict):
+            continue
+        url = (x.get("url") or "").strip()
+        if not url:
+            continue
+        if not china_official_url_allowed(url):
+            continue
+        if not domain_allowed(url):
             continue
         try:
             if not x.get("canonical_url"):
@@ -52,8 +60,8 @@ def raw_items_to_articles(raw_items: List[Dict[str, Any]], max_items: int = 0) -
             items.append(art)
         except Exception:
             continue
-    if max_items > 0:
-        items = items[:max_items]
+        if max_items > 0 and len(items) >= max_items:
+            break
     return items
 
 
@@ -158,11 +166,21 @@ def verified_items_to_articles(
         metrics = item.get("metrics")
         evidence = item.get("evidence")
         if isinstance(metrics, dict):
-            metrics = Metrics(**{k: metrics.get(k, "") for k in ["metric_type", "item", "value", "unit", "context", "channel_vendor", "geo"]})
+            # 确保 value/unit 等字段不为 None（pydantic 要求 string 类型）
+            m = {}
+            for k in ["metric_type", "item", "value", "unit", "context", "channel_vendor", "geo"]:
+                v = metrics.get(k)
+                m[k] = v if v is not None else ""
+            metrics = Metrics(**m)
         else:
             metrics = None
         if isinstance(evidence, dict):
-            evidence = Evidence(**{k: evidence.get(k, "") for k in ["title_on_page", "published_date_text", "key_fact_snippet", "pricing_or_leadtime_snippet"]})
+            # 确保证据字段不为 None
+            e = {}
+            for k in ["title_on_page", "published_date_text", "key_fact_snippet", "pricing_or_leadtime_snippet"]:
+                v = evidence.get(k)
+                e[k] = v if v is not None else ""
+            evidence = Evidence(**e)
         else:
             evidence = None
 

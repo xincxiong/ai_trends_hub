@@ -6,6 +6,7 @@ import json
 from typing import Any, Dict, List
 
 from ..config import settings
+from .fetch_status import set_current_content, set_current_site, set_current_url, set_phase
 from .url_utils import canonicalize_url, force_source_normalization
 from .llm_helpers import call_model_json_array
 
@@ -15,21 +16,20 @@ def _chunk_list(lst: List[Any], n: int):
         yield lst[i : i + n]
 
 
-def verify_urls(url_items: List[Dict[str, Any]], start: str, end: str) -> List[Dict[str, Any]]:
-    batch_size = getattr(settings, "verify_batch_size", 10)
-    verified_all: List[Dict[str, Any]] = []
-
-    for batch in _chunk_list(url_items, batch_size):
-        prompt = f"""
+def verify_one_batch(batch: List[Dict[str, Any]], start: str, end: str) -> List[Dict[str, Any]]:
+    """核验单批 URL，返回本批核验结果（供 pipeline 边核验边保存、断点续抓）。"""
+    if not batch:
+        return []
+    prompt = f"""
 你是一名【事实核验编辑】。请对下面候选 URL 逐条联网打开核验，并从原文抽取结构化字段。
 时间窗口：{start}~{end}（以发布时间或事件确认日期为准）。
 
 【真实性硬规则（很重要）】
 - 你必须能在页面上明确看到：标题 + 来源/站点 + 发布时间/日期（或可推断为同日且页面明确标注）
 - 如果无法确认日期/标题/关键事实一致：verified=false
-- 如果内容明显是“论坛瞎聊/无来源传闻/二手拼接且无法对应原文证据”：verified=false
+- 如果内容明显是"论坛瞎聊/无来源传闻/二手拼接且无法对应原文证据"：verified=false
 - summary 只写原文事实（中文 2-3 句），不要推测
-- 渠道/报价/成本类：尽量抽取“报价区间/交期/供需/成本驱动因素”，但必须来自原文
+- 渠道/报价/成本类：尽量抽取"报价区间/交期/供需/成本驱动因素"，但必须来自原文
 
 【输出要求】
 - 只输出严格 JSON 数组，不要 markdown，不要解释
@@ -66,50 +66,60 @@ def verify_urls(url_items: List[Dict[str, Any]], start: str, end: str) -> List[D
   - geo: 报价/交期对应地区（US/China/Singapore/... 可空）
 - evidence: 【真实性证据】对象（必须有；否则 verified=false）
   - title_on_page: 原文页标题（原文语言）
-  - published_date_text: 页面显示的日期原文（例如 “Jan 21, 2026” 或 “2026年1月21日”）
+  - published_date_text: 页面显示的日期原文（例如 "Jan 21, 2026" 或 "2026年1月21日"）
   - key_fact_snippet: 关键事实的原文短句（<=25词/<=40字）
   - pricing_or_leadtime_snippet: 如果是渠道/成本类，给出原文短句（否则空字符串）
 
 候选 URL items：
 {json.dumps(batch, ensure_ascii=False, indent=2)}
 """.strip()
-
-        data = call_model_json_array(prompt, pass_name="verify-url", use_web_search=True)
-
-        for x in data:
-            if not isinstance(x, dict):
-                continue
-            url = (x.get("url") or "").strip()
-            if not url:
-                continue
-
-            cu = (x.get("canonical_url") or "").strip() or canonicalize_url(url)
-            x["canonical_url"] = cu
-            x["source"] = force_source_normalization(url, x.get("source", ""))
-
-            et = (x.get("event_type") or "fact").strip().lower()
-            if et not in {"fact", "analysis", "technical"}:
-                et = "fact"
-            x["event_type"] = et
-
-            m = x.get("metrics")
-            if not isinstance(m, dict):
-                x["metrics"] = None
-            else:
-                for k in ["metric_type", "item", "value", "unit", "context", "channel_vendor", "geo"]:
-                    if k not in m:
-                        m[k] = ""
-                x["metrics"] = m
-
-            ev = x.get("evidence")
-            if not isinstance(ev, dict):
-                x["evidence"] = None
-            else:
-                for k in ["title_on_page", "published_date_text", "key_fact_snippet", "pricing_or_leadtime_snippet"]:
-                    if k not in ev:
-                        ev[k] = ""
+    data = call_model_json_array(prompt, pass_name="verify-url", use_web_search=True)
+    verified_batch: List[Dict[str, Any]] = []
+    for x in data:
+        if not isinstance(x, dict):
+            continue
+        url = (x.get("url") or "").strip()
+        if not url:
+            continue
+        cu = (x.get("canonical_url") or "").strip() or canonicalize_url(url)
+        x["canonical_url"] = cu
+        x["source"] = force_source_normalization(url, x.get("source", ""))
+        et = (x.get("event_type") or "fact").strip().lower()
+        if et not in {"fact", "analysis", "technical"}:
+            et = "fact"
+        x["event_type"] = et
+        m = x.get("metrics")
+        if not isinstance(m, dict):
+            x["metrics"] = None
+        else:
+            for k in ["metric_type", "item", "value", "unit", "context", "channel_vendor", "geo"]:
+                if k not in m:
+                    m[k] = ""
+            x["metrics"] = m
+        ev = x.get("evidence")
+        if not isinstance(ev, dict):
+            x["evidence"] = None
+        else:
+            for k in ["title_on_page", "published_date_text", "key_fact_snippet", "pricing_or_leadtime_snippet"]:
+                if k not in ev:
+                    ev[k] = ""
                 x["evidence"] = ev
+        verified_batch.append(x)
+    return verified_batch
 
-            verified_all.append(x)
 
+def verify_urls(url_items: List[Dict[str, Any]], start: str, end: str) -> List[Dict[str, Any]]:
+    batch_size = getattr(settings, "verify_batch_size", 10)
+    verified_all: List[Dict[str, Any]] = []
+    total_batches = max(1, (len(url_items) + batch_size - 1) // batch_size)
+    set_phase("verify")
+
+    for batch_idx, batch in enumerate(_chunk_list(url_items, batch_size)):
+        set_current_site(f"核验: 第 {batch_idx + 1}/{total_batches} 批")
+        first_url = (batch[0].get("url") or "").strip() if batch else ""
+        set_current_url(first_url)
+        hints = [str(b.get("title_hint") or b.get("url", ""))[:80] for b in batch[:3]]
+        set_current_content("核验本批 %d 条 URL。示例: %s" % (len(batch), " | ".join(hints) if hints else "(无)"))
+        batch_result = verify_one_batch(batch, start, end)
+        verified_all.extend(batch_result)
     return verified_all

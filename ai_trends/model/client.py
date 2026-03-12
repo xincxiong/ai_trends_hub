@@ -3,12 +3,13 @@ from __future__ import annotations
 
 import sys
 import locale
+import time
 import httpx
 from types import SimpleNamespace
 from typing import Any, Dict, List, Optional
 
 from openai import OpenAI
-from openai import AuthenticationError, NotFoundError, RateLimitError, BadRequestError
+from openai import APITimeoutError, AuthenticationError, NotFoundError, RateLimitError, BadRequestError
 
 from ..config import (
     DOMESTIC_LLM_BASE_URLS,
@@ -98,8 +99,10 @@ def get_llm_client() -> OpenAI:
             "请先配置：1) cp env.example.sh env.sh  2) 编辑 env.sh 填入 API Key  3) source env.sh  后再运行。"
         )
 
+    # 连接 60s、读 600s：Responses API + web_search 可能耗时数分钟，且弱网下 TLS 握手需更长时间
+    timeout = httpx.Timeout(600.0, connect=60.0, read=600.0)
     http_client = httpx.Client(
-        timeout=120.0,
+        timeout=timeout,
         headers={"Accept-Charset": "utf-8"},
     )
 
@@ -167,20 +170,37 @@ def call_responses(
                 f"当前使用：provider={provider}, base={base}。"
             ) from e
 
-    # 尝试 Responses API
+    # 尝试 Responses API（超时自动重试最多 2 次）
     try:
-        resp = client.responses.create(
-            model=settings.llm_model,
-            input=prompt,
-            tools=tools,
-            **extra_kwargs,
-        )
-        resp.actual_mode = "responses"
-        print(
-            f"当前接入 [{provider}]：使用 Responses API（联网检索）。",
-            file=sys.stderr,
-        )
-        return resp
+        last_err = None
+        for attempt in range(3):
+            try:
+                resp = client.responses.create(
+                    model=settings.llm_model,
+                    input=prompt,
+                    tools=tools,
+                    **extra_kwargs,
+                )
+                resp.actual_mode = "responses"
+                print(
+                    f"当前接入 [{provider}]：使用 Responses API（联网检索）。",
+                    file=sys.stderr,
+                )
+                return resp
+            except (APITimeoutError, httpx.ConnectTimeout, httpx.ReadTimeout) as e:
+                last_err = e
+                if attempt < 2:
+                    wait = 5 * (attempt + 1)
+                    print(
+                        f"当前接入 [{provider}]：请求超时，{wait}s 后重试（第 {attempt + 2}/3 次）…",
+                        file=sys.stderr,
+                    )
+                    time.sleep(wait)
+                else:
+                    raise RuntimeError(
+                        "连接或读取 API 超时（可能是网络不稳定或 dashscope 服务较慢）。"
+                        "建议：检查本机到阿里云的网络、代理与防火墙，或稍后重试。"
+                    ) from e
     except NotFoundError:
         # 适配层：若请求了 web_search，则通过外部检索 + 注入 prompt 模拟 Responses API 联网能力
         want_web = (

@@ -1,13 +1,43 @@
-"""数据存储：读写、去重、快照、备份、按日期过滤。"""
+"""数据存储：读写、去重、快照、备份、按日期过滤；断点续抓的 checkpoint/session 读写。"""
 from __future__ import annotations
 
 import json
 import re
 import time
 from pathlib import Path
-from typing import Iterable, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 from ..models import Article
+
+
+def load_json(path: Path, default: Any = None) -> Any:
+    """读取 JSON 文件，不存在或解析失败时返回 default。"""
+    if not path.exists():
+        return default
+    try:
+        raw = path.read_text("utf-8").strip()
+        if not raw:
+            return default
+        return json.loads(raw)
+    except Exception:
+        return default
+
+
+def save_json(path: Path, data: Any) -> None:
+    """写入 JSON 文件（原子写入 .tmp 再 replace）。"""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(path)
+
+
+def append_session_verified(path: Path, items: List[Dict[str, Any]]) -> None:
+    """将本批核验结果追加到 session 文件（边抓边存）。"""
+    existing = load_json(path, [])
+    if not isinstance(existing, list):
+        existing = []
+    existing.extend(items)
+    save_json(path, existing)
 
 
 def _norm_title(t: str) -> str:

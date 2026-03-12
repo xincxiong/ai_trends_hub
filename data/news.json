@@ -1,5 +1,343 @@
 [
   {
+    "date": "2026-03-12",
+    "title": "多智能体系统 - 当前提交 (2026 年 3 月)",
+    "summary": "arXiv cs.MA类别展示了2026年3月的多智能体系统论文集合，包含LLM Agent协作与评估研究。页面显示为2026年3月当前列表，符合时间窗口。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/list/cs.MA/current",
+    "canonical_url": "https://arxiv.org/list/cs.MA/current",
+    "region": "Global",
+    "segment": "科研与算法/多智能体",
+    "tags": [
+      "arXiv",
+      "cs.MA",
+      "多智能体系统"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Multiagent Systems Mar 2026 - arXiv.org",
+      "published_date_text": "Mar 2026",
+      "key_fact_snippet": "Authors and titles for March 2026",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "arXiv计算机视觉领域2026年3月最新论文列表更新",
+    "summary": "arXiv更新了2026年3月的计算机视觉与模式识别（cs.CV）论文列表，包含356篇条目。最新提交涵盖指甲设计图像检索等被CVPR 2026 Findings录用的研究。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/list/cs.CV/current",
+    "canonical_url": "https://arxiv.org/list/cs.CV/current",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "arXiv",
+      "计算机视觉",
+      "CVPR 2026",
+      "最新论文"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Computer Vision and Pattern Recognition Mar 2026 - arXiv",
+      "published_date_text": "Wed, 11 Mar 2026",
+      "key_fact_snippet": "Total of 356 entries : 1-100 1801-356",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "TrustAgent：AAAI 2026研讨会录用论文探讨智能体信任与控制",
+    "summary": "arXiv发布了编号为2603.09152的论文，该论文已被AAAI 2026关于智能体AI信任与控制的研讨会录用。研究聚焦于人工智能领域的信任机制与控制策略。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2603.09152",
+    "canonical_url": "https://arxiv.org/abs/2603.09152",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "AAAI 2026",
+      "智能体信任",
+      "TrustAgent",
+      "研讨会论文"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "[2603.09152] TrustAgent: Trust and Control in Agentic AI",
+      "published_date_text": "2026-03-12",
+      "key_fact_snippet": "Accepted at the AAAI 2026 Workshop on Trust and Control in Agentic AI",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "arXiv人工智能领域最新提交论文，2026年3月12日更新",
+    "summary": "arXiv更新了人工智能（cs.AI）领域的最新提交论文列表，显示2026年3月11日的最新条目。涵盖机器学习、计算语言学和计算机视觉等交叉研究方向。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/list/cs.AI/new",
+    "canonical_url": "https://arxiv.org/list/cs.AI/new",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "arXiv",
+      "人工智能",
+      "最新提交",
+      "机器学习"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Artificial Intelligence - arXiv",
+      "published_date_text": "Wed, 11 Mar 2026",
+      "key_fact_snippet": "Authors and titles for recent submissions. Wed, 11 Mar 2026",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "ICLR 2026会议OpenReview页面开放，可查阅投稿与评审状态",
+    "summary": "OpenReview平台已开放ICLR 2026会议群组页面，显示会议将于2026年4月在巴西举行。页面列出了大量投稿论文及其修改记录，部分论文状态显示为已撤回或已提交。",
+    "source": "OpenReview",
+    "url": "https://openreview.net/group?id=ICLR.cc/2026/Conference",
+    "canonical_url": "https://openreview.net/group?id=ICLR.cc%2F2026%2FConference",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "ICLR 2026",
+      "OpenReview",
+      "论文评审",
+      "学术会议"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "ICLR 2026 Conference - OpenReview",
+      "published_date_text": "Apr 23 2026",
+      "key_fact_snippet": "The Fourteenth International Conference on Learning Representations. Rio de Janeiro, Brazil",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "技嘉GeForce RTX 5070 AERO OC 12G显卡现货供应",
+    "summary": "LDLC网站显示技嘉GeForce RTX 5070 AERO OC 12G显卡目前有库存，预计7天内（3月12日）可发货。该产品配备12GB GDDR7显存，支持DLSS 4技术，售价为739欧元。",
+    "source": "LDLC",
+    "url": "https://www.ldlc.com/en/product/PB00671177.html",
+    "canonical_url": "https://ldlc.com/en/product/PB00671177.html",
+    "region": "EU",
+    "segment": "渠道与现货",
+    "tags": [
+      "RTX 5070",
+      "技嘉",
+      "GDDR7",
+      "现货",
+      "显卡"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "RTX 5070",
+      "value": "739",
+      "unit": "EUR",
+      "context": "Gigabyte GeForce RTX 5070 AERO OC 12G listed at 739 EUR with stock availability within 7 days",
+      "channel_vendor": "LDLC",
+      "geo": "EU"
+    },
+    "evidence": {
+      "title_on_page": "Gigabyte GeForce RTX 5070 AERO OC 12G - Graphics card",
+      "published_date_text": "In stock within 7 days (12 Mar 2026)",
+      "key_fact_snippet": "12 GB GDDR7 - HDMI/Tri DisplayPort - DLSS 4",
+      "pricing_or_leadtime_snippet": "In stock within 7 days (12 Mar 2026)"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "2026年3月31日NVIDIA H200计算价格预测市场",
+    "summary": "Kalshi预测市场页面显示2026年3月12日仍在交易，预测3月31日H200计算价格是否高于2.41美元/小时。反映市场对渠道现货价格的预期。",
+    "source": "Kalshi",
+    "url": "https://kalshi.com/markets/kxh200mon/h200-monthly-price/kxh200mon-26mar31",
+    "canonical_url": "https://kalshi.com/markets/kxh200mon/h200-monthly-price/kxh200mon-26mar31",
+    "region": "US",
+    "segment": "渠道与现货/采购与TCO",
+    "tags": [
+      "H200价格",
+      "预测市场",
+      "Kalshi",
+      "云GPU",
+      "现货价格"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "H200",
+      "value": "2.41",
+      "unit": "USD/hr",
+      "context": "If the value of H200 compute per hour is above $2.41 on Mar 31, 2026, then the market resolves to Yes",
+      "channel_vendor": "Kalshi",
+      "geo": "US"
+    },
+    "evidence": {
+      "title_on_page": "Price of NVIDIA H200 compute on Mar 31, 2026?",
+      "published_date_text": "2026-03-12",
+      "key_fact_snippet": "If the value of H200 compute per hour is above $2.41 on Mar 31, 2026",
+      "pricing_or_leadtime_snippet": "Outcome verified from Ornn"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "ICLR 2026会议论文页面发布，涵盖多类别虚拟试衣与概念解耦研究",
+    "summary": "ICLR 2026虚拟会议页面已上线，展示包括多类别产品风格图像生成和概念耦合缓解等录用论文。会议将于2026年4月23日至27日在巴西里约热内卢举行，今年不设虚拟海报环节。",
+    "source": "ICLR",
+    "url": "https://iclr.cc/virtual/2026/papers.html",
+    "canonical_url": "https://iclr.cc/virtual/2026/papers.html",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "ICLR 2026",
+      "顶会论文",
+      "多模态生成",
+      "概念解耦"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "ICLR 2026 Papers",
+      "published_date_text": "Conference Dates: April 23rd - 27th, 2026",
+      "key_fact_snippet": "Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "Hugging Face热门论文榜单",
+    "summary": "Hugging Face热门论文页面展示了当前社区关注度最高的AI研究，包括Helios实时长视频生成扩散模型等新成果。榜单根据GitHub星数活动和社区互动进行排名。",
+    "source": "Hugging Face",
+    "url": "https://huggingface.co/papers/trending",
+    "canonical_url": "https://huggingface.co/papers/trending",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "热门论文",
+      "Helios",
+      "视频生成",
+      "扩散模型"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Trending Papers",
+      "published_date_text": "2026-03-12",
+      "key_fact_snippet": "Helios is a 14 billion parameter autoregressive diffusion model for video generation",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-12",
+    "title": "One to One Retail E-commerce 会议 2026 年 3 月 10-12 日摩纳哥举行",
+    "summary": "One to One Retail E-commerce会议于2026年3月10日至12日在摩纳哥举行，展示生成式AI和全渠道零售解决方案。页面明确标注活动日期包含2026年3月12日，符合时间窗口要求。",
+    "source": "1to1 Retail E-commerce",
+    "url": "https://www.1to1-retail-ecommerce.com/en",
+    "canonical_url": "https://1to1-retail-ecommerce.com/en",
+    "region": "EU",
+    "segment": "行业应用与落地/零售",
+    "tags": [
+      "零售电商",
+      "生成式AI",
+      "摩纳哥展会"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "10 - 12 march 2026 - One to One Retail E-commerce",
+      "published_date_text": "10 to 12 March, 2026",
+      "key_fact_snippet": "Conferences led by industry experts and leaders, enriched with iconic customer case studies",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "美的集团加码AI 拟未来三年投入超600亿元",
+    "summary": "美的集团于3月11日发布全屋智能战略，宣布未来三年将投入超600亿元聚焦AI与具身智能领域。过去五年美的累计研发投入已超600亿元，拥有全球研发人员超2.3万名。",
+    "source": "新浪财经",
+    "url": "https://finance.sina.com.cn/jjxw/2026-03-11/doc-inhqrfcr5591408.shtml",
+    "canonical_url": "https://finance.sina.com.cn/jjxw/2026-03-11/doc-inhqrfcr5591408.shtml",
+    "region": "China",
+    "segment": "行业应用与落地/制造与家居",
+    "tags": [
+      "美的集团",
+      "600亿元投资",
+      "全屋智能"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "美的集团加码AI 拟未来三年投入超600亿元",
+      "published_date_text": "2026-03-11",
+      "key_fact_snippet": "未来三年还将继续投入超600亿元，聚焦AI、具身智能等前沿领域",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "新浪机器学习热点小时报丨2026年03月11日13时",
+    "summary": "报道引用黄仁勋关于AI“五层蛋糕”架构的理论，涵盖能源、芯片、云计算、模型及金融医疗制造等垂直应用。文章发布于2026年3月11日13时，符合时间窗口。",
+    "source": "新浪科技",
+    "url": "https://k.sina.com.cn/article_7857201856_1d45362c0019032wpk.html",
+    "canonical_url": "https://k.sina.com.cn/article_7857201856_1d45362c0019032wpk.html",
+    "region": "China",
+    "segment": "行业应用与落地/多行业",
+    "tags": [
+      "黄仁勋",
+      "五层蛋糕理论",
+      "AI基础设施"
+    ],
+    "event_type": "analysis",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "新浪机器学习热点小时报丨2026年03月11日13时",
+      "published_date_text": "2026年03月11日13时",
+      "key_fact_snippet": "黄仁勋就曾解释过“五层蛋糕”的原理：最底层是能源基础，向上依次为芯片与计算基础设施",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
     "date": "2026-03-11",
     "title": "提出动态任务组合评测基准评估大模型推理能力",
     "summary": "EvalGPT评测基准通过动态组合任务序列，更真实地模拟复杂推理场景。在测试中，主流大模型平均表现下降幅度达29%。",
@@ -168,6 +506,59 @@
   },
   {
     "date": "2026-03-11",
+    "title": "人工智能 - 最近提交 (2026 年 3 月 11 日)",
+    "summary": "arXiv cs.AI类别展示了2026年3月11日的最新论文提交列表，包含189篇条目涉及计算语言与人工智能主题。页面明确标注日期为Wed, 11 Mar 2026。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/list/cs.AI/recent",
+    "canonical_url": "https://arxiv.org/list/cs.AI/recent",
+    "region": "Global",
+    "segment": "科研与算法/论文",
+    "tags": [
+      "arXiv",
+      "cs.AI",
+      "最新论文"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Artificial Intelligence - arXiv",
+      "published_date_text": "Wed, 11 Mar 2026",
+      "key_fact_snippet": "Wed, 11 Mar 2026 (showing first 50 of 189 entries)",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "arXiv计算语言学领域最近提交论文，涵盖LLM对齐与多智能体系统",
+    "summary": "arXiv更新了计算语言学（cs.CL）领域的最近提交论文，显示2026年3月10日和11日的最新条目。研究主题涉及多智能体系统、机器学习和信息检索等方向。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/list/cs.CL/recent",
+    "canonical_url": "https://arxiv.org/list/cs.CL/recent",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "arXiv",
+      "计算语言学",
+      "LLM对齐",
+      "多智能体"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Computation and Language - arXiv.org",
+      "published_date_text": "Tue, 10 Mar 2026",
+      "key_fact_snippet": "Authors and titles for recent submissions. Wed, 11 Mar 2026",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
     "title": "超微确认2026年3月AI服务器交付周期延长至16周",
     "summary": "超微公司于2026年3月11日证实，当前AI服务器订单交付周期已延长至16周。该延迟主要由组件供应不足引起。",
     "source": "ZDNet",
@@ -268,6 +659,70 @@
       "title_on_page": "HBM3e Shipments Decline 18% in Q1 2026 Amid Manufacturing Challenges",
       "published_date_text": "2026-03-11",
       "key_fact_snippet": "HBM3e shipments declined by 18% in Q1 2026 due to manufacturing challenges.",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "DRAM市场现货价格趋势",
+    "summary": "TrendForce页面显示2026年第一季度DRAM合约价格飙升，DDR4涨幅超越DDR5。受原厂供给紧缺影响，PC DRAM合约价呈现倍数级暴涨，库存水位偏低推高短期通路需求。",
+    "source": "TrendForce",
+    "url": "https://www.trendforce.cn/price",
+    "canonical_url": "https://trendforce.cn/price",
+    "region": "Global",
+    "segment": "内存与成本",
+    "tags": [
+      "DRAM价格",
+      "DDR5",
+      "现货价格",
+      "TrendForce",
+      "供给紧缺"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "DDR5",
+      "value": "Rising",
+      "unit": "%",
+      "context": "PC DRAM contract prices skyrocketed in Q1 2026, with DDR4 outperforming DDR5 due to supply shortages.",
+      "channel_vendor": "TrendForce",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "内存DRAM价格趋势",
+      "published_date_text": "2026年3月11日 (Inferred from context/update)",
+      "key_fact_snippet": "受限于原厂供给紧缺，首季PC DRAM合约价呈现倍数级暴涨",
+      "pricing_or_leadtime_snippet": "2026年2月DRAM合约价格飙升"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "应用材料公司与美光、SK海力士合作开发下一代DRAM、HBM和NAND",
+    "summary": "应用材料公司（Applied Materials）宣布与美光（Micron）和SK海力士（SK hynix）签署长期合作协议，共同加速下一代DRAM、HBM及NAND闪存技术的研发。此次合作旨在应对AI及高性能计算对先进存储芯片日益增长的需求。",
+    "source": "TrendForce",
+    "url": "https://www.trendforce.com/news/2026/03/11/news-applied-materials-teams-up-with-micron-sk-hynix-for-next-gen-dram-hbm-and-nand-development/",
+    "canonical_url": "https://trendforce.com/news/2026/03/11/news-applied-materials-teams-up-with-micron-sk-hynix-for-next-gen-dram-hbm-and-nand-development",
+    "region": "Global",
+    "segment": "供应链",
+    "tags": [
+      "应用材料",
+      "美光",
+      "SK海力士",
+      "HBM",
+      "DRAM"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "[News] Applied Materials Teams Up with Micron, SK hynix for Next-Gen DRAM, HBM and NAND Development",
+      "published_date_text": "2026.03.11",
+      "key_fact_snippet": "Applied Materials has teamed up with Micron and SK hynix to develop next-generation chips critical for AI",
       "pricing_or_leadtime_snippet": ""
     },
     "main_category": "ai_hardware",
@@ -669,6 +1124,34 @@
   },
   {
     "date": "2026-03-11",
+    "title": "AMD CEO 将在韩国会见三星掌门人，共商 AI 内存芯片竞争",
+    "summary": "AMD 首席执行官苏姿丰将于下周在韩国会见三星电子会长李在镕，讨论 AI 内存芯片领域的合作。此次会晤背景是三星、AMD 与英伟达在 AI 内存市场的激烈竞争。",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/world/asia-pacific/amd-ceo-meet-samsung-chief-south-korea-amid-race-ai-memory-chips-paper-says-2026-03-11/",
+    "canonical_url": "https://reuters.com/world/asia-pacific/amd-ceo-meet-samsung-chief-south-korea-amid-race-ai-memory-chips-paper-says-2026-03-11",
+    "region": "APAC",
+    "segment": "AI 芯片/供应链",
+    "tags": [
+      "AMD",
+      "三星",
+      "HBM",
+      "AI 芯片",
+      "供应链合作"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "AMD CEO to meet Samsung chief in South Korea amid race for AI memory chips, paper says",
+      "published_date_text": "March 11, 2026",
+      "key_fact_snippet": "Advanced Micro Devices' CEO Lisa Su will meet Samsung Electronics Chairman Jay Y. Lee in South Korea next week",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
     "title": "甲骨文云推出搭载H200与B200的新型GPU实例",
     "summary": "甲骨文云宣布推出搭载H200与B200 GPU的新一代GPU实例，首批客户已开始交付。技嘉与ASUS提供系统支持，供应链稳定推进。",
     "source": "Oracle Cloud Blog",
@@ -921,6 +1404,60 @@
   },
   {
     "date": "2026-03-11",
+    "title": "Hugging Face每日论文精选 - 2026年第11周",
+    "summary": "Hugging Face发布2026年第11周每日论文精选，涵盖强化学习与多模态方向的多项研究。页面列出了当周社区关注度较高的AI论文及其摘要信息。",
+    "source": "Hugging Face",
+    "url": "https://huggingface.co/papers/week/2026-W11",
+    "canonical_url": "https://huggingface.co/papers/week/2026-W11",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "论文精选",
+      "Hugging Face",
+      "周度汇总",
+      "AI研究"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Daily Papers - Week 11 2026",
+      "published_date_text": "2026-W11",
+      "key_fact_snippet": "Daily Papers curated by Hugging Face research community for Week 11 of 2026",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "Hugging Face发布2026年3月中国开源AI模型与论文精选集合",
+    "summary": "Hugging Face平台上的zh-ai-community社区更新了2026年3月中国开源AI亮点集合。该集合由社区成员AdinaY在约13小时前更新，汇集了中国社区的开源模型与项目。",
+    "source": "Hugging Face",
+    "url": "https://huggingface.co/collections/zh-ai-community/2026-march-china-open-source-highlights",
+    "canonical_url": "https://huggingface.co/collections/zh-ai-community/2026-march-china-open-source-highlights",
+    "region": "China",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "Hugging Face",
+      "中国开源",
+      "AI模型",
+      "社区精选"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "2026 March - China Open Source Highlights",
+      "published_date_text": "updated a collection about 13 hours ago",
+      "key_fact_snippet": "2026 March - China Open Source Highlights · AdinaY updated a collection",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
     "title": "AMS宣布延长HBM3e订单交付周期至24周",
     "summary": "2026年3月11日，HBM3E Update报道，原厂AMS因多款大模型发布导致产能压力，宣布将HBM3e订单交期延长至24周。",
     "source": "HBM3E Update",
@@ -949,6 +1486,42 @@
       "published_date_text": "March 11, 2026",
       "key_fact_snippet": "AMS announces extended lead times for HBM3E orders.",
       "pricing_or_leadtime_snippet": "Lead times extended to 24 weeks due to high demand."
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "2026年GPU价格实时比较",
+    "summary": "页面显示2026年3月11日更新的GPU云价格比较，包含NVIDIA H200等型号。H200每小时价格区间为1.50至10.44美元。",
+    "source": "GetDeploying",
+    "url": "https://getdeploying.com/gpus",
+    "canonical_url": "https://getdeploying.com/gpus",
+    "region": "Global",
+    "segment": "渠道与现货/采购与TCO",
+    "tags": [
+      "GPU价格",
+      "H200",
+      "云租赁",
+      "实时报价",
+      "NVIDIA"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "quote",
+      "item": "H200",
+      "value": "1.50-10.44",
+      "unit": "USD/hr",
+      "context": "There is a 85% difference between the highest and lowest listings for the H200",
+      "channel_vendor": "GetDeploying",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "GPU Price Comparison [2026]",
+      "published_date_text": "2026-03-11",
+      "key_fact_snippet": "Nvidia H200, 141GB HBM3e, $1.50 - $10.44",
+      "pricing_or_leadtime_snippet": "You can pay up to $10.44/hr, but the market floor is currently $1.50/hr per GPU"
     },
     "main_category": "ai_hardware",
     "sub_categories": [],
@@ -1127,6 +1700,34 @@
       "published_date_text": "March 11, 2026",
       "key_fact_snippet": "HBM packaging bottleneck at TSMC's partners like ASE and Siliconware.",
       "pricing_or_leadtime_snippet": "Deliveries delayed at major HBM packaging facilities."
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-11",
+    "title": "应用材料与SK海力士携手合作AI内存技术",
+    "summary": "应用材料公司与SK海力士签署长期研发协议，计划在硅谷建立新设施以加速AI内存技术开发。该设施预计于2026年晚些时候开放，代表应用材料在半导体设备研发上投资50亿美元。",
+    "source": "Evertiq",
+    "url": "https://evertiq.com/design/2026-03-11-applied-materials-and-sk-hynix-to-collaborate-on-ai-memory",
+    "canonical_url": "https://evertiq.com/design/2026-03-11-applied-materials-and-sk-hynix-to-collaborate-on-ai-memory",
+    "region": "US",
+    "segment": "供应链",
+    "tags": [
+      "应用材料",
+      "SK海力士",
+      "AI内存",
+      "研发投资",
+      "半导体设备"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Applied Materials and SK hynix to collaborate on AI memory",
+      "published_date_text": "2026-03-11",
+      "key_fact_snippet": "represents a USD 5 billion investment by Applied Materials in semiconductor equipment research and development",
+      "pricing_or_leadtime_snippet": ""
     },
     "main_category": "ai_hardware",
     "sub_categories": [],
@@ -1993,6 +2594,32 @@
       "title_on_page": "ReAct++: Enhanced Reasoning and Action Selection for LLM Agents",
       "published_date_text": "Tue, 10 Mar 2026 14:45:00 GMT",
       "key_fact_snippet": "We present ReAct++, enhancing reasoning and action selection in LLM agents.",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-10",
+    "title": "机器学习 - 最近提交 (2026 年 3 月 10 日)",
+    "summary": "arXiv cs.LG类别展示了2026年3月10日的最新论文提交列表，包含383篇条目。虽然当前时间为3月12日，但页面最新显示的主要批次日期为3月10日（Tue, 10 Mar 2026），3月11-12日可能有少量更新但主列表头显示10日。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/list/cs.LG/recent",
+    "canonical_url": "https://arxiv.org/list/cs.LG/recent",
+    "region": "Global",
+    "segment": "科研与算法/论文",
+    "tags": [
+      "arXiv",
+      "cs.LG",
+      "机器学习"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Machine Learning - arXiv.org",
+      "published_date_text": "Tue, 10 Mar 2026",
+      "key_fact_snippet": "Tue, 10 Mar 2026 (showing first 50 of 383 entries)",
       "pricing_or_leadtime_snippet": ""
     },
     "main_category": "ai_research",
@@ -7176,6 +7803,34 @@
   },
   {
     "date": "2026-03-10",
+    "title": "科技公司涌入债务市场为AI和云扩张融资",
+    "summary": "全球大型科技公司正积极利用债务市场筹集资金，以支持其AI基础设施和数据中心的快速扩张。2026年预计AI支出将大幅增加，推动企业融资策略转向债务工具。",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/business/media-telecom/tech-companies-tap-debt-markets-fund-ai-cloud-expansion-2026-03-10/",
+    "canonical_url": "https://reuters.com/business/media-telecom/tech-companies-tap-debt-markets-fund-ai-cloud-expansion-2026-03-10",
+    "region": "Global",
+    "segment": "投融资",
+    "tags": [
+      "债务融资",
+      "AI基础设施",
+      "数据中心",
+      "科技公司",
+      "云扩张"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Tech companies tap debt markets to fund AI and cloud expansion",
+      "published_date_text": "March 10, 2026",
+      "key_fact_snippet": "The world's largest technology companies are tapping debt markets",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_funding_ma",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-10",
     "title": "2026年AI服务器BOM成本拆解：HBM3e占总成本42%",
     "summary": "根据2026年最新分析，HBM3e内存芯片在AI服务器的物料清单（BOM）中占比达42%。这一高占比凸显其对整体成本的关键影响。",
     "source": "PCMag",
@@ -7259,6 +7914,33 @@
       "title_on_page": "AutoRL: Automated Reinforcement Learning Pipeline for Agent Design",
       "published_date_text": "Mar 10, 2026",
       "key_fact_snippet": "We introduce AutoRL, an automated RL pipeline for agent design.",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-10",
+    "title": "M3Kang：多语言多模态数学推理评测数据集与基准发布",
+    "summary": "OpenReview页面展示了M3Kang论文，这是一个用于评估视觉语言模型多语言数学推理能力的大规模多模态数据集。该数据集基于Kangaroo数学竞赛题目构建，支持多种语言。",
+    "source": "OpenReview",
+    "url": "https://openreview.net/forum?id=txURffKsPo",
+    "canonical_url": "https://openreview.net/forum?id=txURffKsPo",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "M3Kang",
+      "多模态推理",
+      "数学评测",
+      "多语言数据集"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "M3Kang: Evaluating Multilingual Multimodal Mathematical Reasoning",
+      "published_date_text": "2025-09-19",
+      "key_fact_snippet": "first massively multilingual, multimodal mathematical reasoning dataset for VLMs",
       "pricing_or_leadtime_snippet": ""
     },
     "main_category": "ai_research",
@@ -10948,6 +11630,34 @@
   },
   {
     "date": "2026-03-10",
+    "title": "先进封装产能吃紧，Nvidia将CoWoP PCB合作伙伴缩减至三家",
+    "summary": "随着先进封装产能日益紧张，Nvidia正推进其CoWoP（Chip-on-Wafer-on-PCB）技术，并将PCB合作伙伴数量缩减至三家。此举反映了ABF基板等关键材料的供应瓶颈及对高质量封装需求的增加。",
+    "source": "DigiTimes",
+    "url": "https://www.digitimes.com/news/a20260310PD225/packaging-pcb-nvidia-capacity-development.html",
+    "canonical_url": "https://digitimes.com/news/a20260310PD225/packaging-pcb-nvidia-capacity-development.html",
+    "region": "Global",
+    "segment": "先进封装",
+    "tags": [
+      "Nvidia",
+      "CoWoP",
+      "PCB",
+      "先进封装",
+      "ABF基板"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Nvidia narrows CoWoP PCB partners to three amid advanced packaging crunch",
+      "published_date_text": "Tuesday 10 March 2026",
+      "key_fact_snippet": "Nvidia is quietly pushing its Chip-on-Wafer-on-PCB (CoWoP) technology forward",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-10",
     "title": "Supermicro披露其服务器搭载的HBM3e GPU模块交期延长至8-10周",
     "summary": "Supermicro确认其服务器系统中使用的HBM3e GPU模块因供应短缺，交期已延长至8至10周。配额受限导致客户订单延迟。",
     "source": "DigiKey News",
@@ -13444,6 +14154,60 @@
   },
   {
     "date": "2026-03-09",
+    "title": "BRIDGE: 长多模态文档多跳推理评测基准",
+    "summary": "论文介绍BRIDGE基准，用于评测长科学论文中需要整合文本、表格和图表证据的多跳推理能力。该基准为诊断长多模态文档中的推理失败提供了针对性测试平台。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/html/2603.07931",
+    "canonical_url": "https://arxiv.org/abs/2603.07931",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "评测基准",
+      "多跳推理",
+      "多模态",
+      "长文档"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "BRIDGE: Benchmark for Multi-hop Reasoning In long multimodal Documents with Grounded Evidence",
+      "published_date_text": "Submitted on 9 Mar 2026",
+      "key_fact_snippet": "BRIDGE provides a targeted testbed for diagnosing reasoning failures in long multimodal documents",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-09",
+    "title": "多模态数学推理的解构：迈向统一感知 - 对齐 - 推理范式",
+    "summary": "研究对多模态数学推理能力进行解构分析，提出统一的感知 - 对齐 - 推理范式。该工作系统评估了现有方法在跨模态数学问题解决中的表现和局限。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/pdf/2603.08291",
+    "canonical_url": "https://arxiv.org/abs/2603.08291",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "多模态",
+      "数学推理",
+      "解构分析",
+      "统一范式"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Deconstructing Multimodal Mathematical Reasoning: Towards a Unified Perception-Alignment-Reasoning Paradigm",
+      "published_date_text": "Submitted on 9 Mar 2026",
+      "key_fact_snippet": "Deconstructing multimodal mathematical reasoning towards a unified perception-alignment-reasoning paradigm",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-09",
     "title": "超微因美国出口管制面临H200渠道交付延迟",
     "summary": "受美国出口管制影响，超微在中国市场的系统级产品交付周期明显延长。客户订单积压，出货受限。",
     "source": "ZDNet",
@@ -13571,6 +14335,42 @@
       "published_date_text": "March 9, 2026",
       "key_fact_snippet": "SK hynix will implement demand-based pricing for HBM3e starting Q2 2026.",
       "pricing_or_leadtime_snippet": "SK hynix will implement demand-based pricing for HBM3e starting Q2 2026."
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-09",
+    "title": "三星和SK海力士获选为英伟达Rubin HBM4供应商，3月或开始出货",
+    "summary": "据TrendForce报道，三星和SK海力士被选为英伟达下一代Vera Rubin GPU的HBM4主要供应商。SK海力士预计占英伟达HBM4供应份额约50%，三星约占30%。",
+    "source": "TrendForce",
+    "url": "https://www.trendforce.com/news/2026/03/09/news-samsung-sk%E2%80%AFhynix-reportedly-tapped-as-nvidia-rubin-hbm4-suppliers-shipments-could-start-in-march/",
+    "canonical_url": "https://trendforce.com/news/2026/03/09/news-samsung-sk%E2%80%AFhynix-reportedly-tapped-as-nvidia-rubin-hbm4-suppliers-shipments-could-start-in-march",
+    "region": "Global",
+    "segment": "AI芯片/HBM",
+    "tags": [
+      "HBM4",
+      "英伟达",
+      "三星",
+      "SK海力士",
+      "Rubin"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "supply_tightness",
+      "item": "HBM4",
+      "value": "50",
+      "unit": "%",
+      "context": "SK hynix will still lead global HBM bit output with a 50% share",
+      "channel_vendor": "SK Hynix, Samsung",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "Samsung, SK hynix Reportedly Tapped as NVIDIA Rubin HBM4 Suppliers",
+      "published_date_text": "Mar 9, 2026",
+      "key_fact_snippet": "SK hynix will still lead global HBM bit output with a 50% share—down from 59% in 2025",
+      "pricing_or_leadtime_snippet": "shipments could start in March"
     },
     "main_category": "ai_hardware",
     "sub_categories": [],
@@ -20766,6 +21566,1436 @@
       "published_date_text": "March 9, 2026",
       "key_fact_snippet": "Lead times have increased from 12 to over 16 weeks due to demand surge.",
       "pricing_or_leadtime_snippet": "Lead times have increased from 12 to over 16 weeks due to demand surge."
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-08",
+    "title": "台积电先进封装产能告急，sub-5nm制程2026年涨价3-5%",
+    "summary": "文章指出台积电sub-5nm制程价格在2026年上调3-5%，且先进封装产能持续紧张。SK Hynix已预订完2026年全部HBM产能，分析师警告价格可能进一步上涨50%。",
+    "source": "LinkedIn",
+    "url": "https://www.linkedin.com/pulse/semi-briefing-17-march-2026-magic-jo-nuimc",
+    "canonical_url": "https://linkedin.com/pulse/semi-briefing-17-march-2026-magic-jo-nuimc",
+    "region": "Global",
+    "segment": "供应链",
+    "tags": [
+      "台积电",
+      "先进封装",
+      "HBM",
+      "涨价",
+      "产能"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "sub-5nm",
+      "value": "3-5%",
+      "unit": "%",
+      "context": "TSMC has raised sub-5nm prices by 3–5% for 2026.",
+      "channel_vendor": "TSMC",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "The Semi Briefing | 1~7 March 2026",
+      "published_date_text": "Published Mar 8, 2026",
+      "key_fact_snippet": "TSMC Pricing Power: The foundry leader has raised sub-5nm prices by 3–5% for 2026.",
+      "pricing_or_leadtime_snippet": "SK Hynix has already booked out its entire 2026 capacity, and analysts warn of a further 50% price increase"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-07",
+    "title": "AI算力需求引爆市场 光纤价格跳涨创新高",
+    "summary": "受AI算力需求驱动，G.652.D单模光纤价格从2025年11月不足20元/芯公里快速升至2026年2月的40-50元/芯公里，单月最高涨幅超75%。CRU数据显示短短三个月价格翻倍。",
+    "source": "新浪财经",
+    "url": "https://finance.sina.com.cn/jjxw/2026-03-07/doc-inhqawxw2170200.shtml",
+    "canonical_url": "https://finance.sina.com.cn/jjxw/2026-03-07/doc-inhqawxw2170200.shtml",
+    "region": "China",
+    "segment": "渠道与现货",
+    "tags": [
+      "光纤涨价",
+      "AI算力",
+      "G.652.D",
+      "CRU数据",
+      "供应链"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "G.652.D单模光纤",
+      "value": "40-50",
+      "unit": "元/芯公里",
+      "context": "CRU数据显示通信领域最通用的G.652.D单模光纤市场均价由2025年11月不足20元/芯公里快速升至2026年2月的40元—50元/芯公里",
+      "channel_vendor": "",
+      "geo": "China"
+    },
+    "evidence": {
+      "title_on_page": "AI算力引爆市场需求光纤价格跳涨创新高",
+      "published_date_text": "2026-03-07",
+      "key_fact_snippet": "G.652.D单模光纤市场均价由2025年11月不足20元/芯公里快速升至2026年2月的40元—50元/芯公里",
+      "pricing_or_leadtime_snippet": "单月最高涨幅超75%，短短三个月价格翻倍"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-07",
+    "title": "Re²: 通过重求解强化学习解锁大语言模型推理能力",
+    "summary": "该论文提出Re²（Re-solving Reinforcement Learning）方法，使大语言模型能够灵活放弃无效推理路径并在必要时重新开始。该方法旨在解决现有强化学习模型在复杂推理任务中容易陷入死胡同的问题。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2603.07197",
+    "canonical_url": "https://arxiv.org/abs/2603.07197",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "强化学习",
+      "LLM推理",
+      "Re-solving",
+      "RLVR"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Re^2: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving",
+      "published_date_text": "Submitted on 7 Mar 2026",
+      "key_fact_snippet": "LLMs learn to flexibly abandon unproductive reasoning paths and restart the solving process",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-07",
+    "title": "2026年3月显卡价格演变：市场盘点",
+    "summary": "DropReference盘点2026年3月初显卡价格演变，显示RTX 5080、RTX 5060 Ti等型号价格持续上涨。文章指出DDR5短缺和GPU价格上涨使得低成本游戏PC在2026年几乎不可能实现。",
+    "source": "DropReference",
+    "url": "https://dropreference.com/en/blog/news/evolution-price-graphics-card-march-2026",
+    "canonical_url": "https://dropreference.com/en/blog/news/evolution-price-graphics-card-march-2026",
+    "region": "EU",
+    "segment": "渠道与现货",
+    "tags": [
+      "显卡价格",
+      "RTX 5080",
+      "RTX 5060 Ti",
+      "市场趋势",
+      "DDR5短缺"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "RTX 5060 Ti 16GB",
+      "value": "397-455 EUR",
+      "unit": "EUR",
+      "context": "RTX 5060 Ti 16GB averages just over €700 in early March 2026.",
+      "channel_vendor": "Retailers",
+      "geo": "Europe"
+    },
+    "evidence": {
+      "title_on_page": "Evolution of graphics card prices in March 2026: taking stock",
+      "published_date_text": "Published on 7 March 2026",
+      "key_fact_snippet": "Complete analysis of the price evolution of GPUs (RTX 5080, RTX 5060 Ti, RX 9070 XT) in early March 2026",
+      "pricing_or_leadtime_snippet": "RTX 5060 Ti 16 GB, 397 - 455 EUR"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-06",
+    "title": "欣兴ABF载板长约客户抢签 明年恐供不应求",
+    "summary": "欣兴电子因上游材料价格持续上扬，宣布自2026年3月起再次调涨ABF载板价格。客户为抢占产能纷纷签订长期合约（LTA），多数合约为期5年，预计明年将出现供不应求局面。",
+    "source": "自由财经",
+    "url": "https://www.linkedin.com/posts/erudite-asia_%E7%84%A6%E9%BB%9E%E8%82%A1%E6%AC%A3%E8%88%88%E5%AE%A2%E6%88%B6%E6%90%B6%E7%B0%BDabf%E8%BC%89%E6%9D%BF%E9%95%B7%E7%B4%84-%E6%98%8E%E5%B9%B4%E6%81%90%E4%BE%9B%E4%B8%8D%E6%87%89%E6%B1%82-%E8%87%AA%E7%94%B1%E8%B2%A1%E7%B6%93-activity-7435514766024065024-nk9u",
+    "canonical_url": "https://linkedin.com/posts/erudite-asia_%E7%84%A6%E9%BB%9E%E8%82%A1%E6%AC%A3%E8%88%88%E5%AE%A2%E6%88%B6%E6%90%B6%E7%B0%BDabf%E8%BC%89%E6%9D%BF%E9%95%B7%E7%B4%84-%E6%98%8E%E5%B9%B4%E6%81%90%E4%BE%9B%E4%B8%8D%E6%87%89%E6%B1%82-%E8%87%AA%E7%94%B1%E8%B2%A1%E7%B6%93-activity-7435514766024065024-nk9u",
+    "region": "APAC",
+    "segment": "渠道与现货/供应链",
+    "tags": [
+      "ABF载板",
+      "欣兴电子",
+      "涨价",
+      "长约",
+      "供应链"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "ABF substrate",
+      "value": "",
+      "unit": "",
+      "context": "欣兴电子3月起再度调涨ABF载板，客户为抢产能签5年长约",
+      "channel_vendor": "欣兴电子",
+      "geo": "Taiwan"
+    },
+    "evidence": {
+      "title_on_page": "焦點股》欣興：客戶搶簽ABF載板長約明年恐供不應求",
+      "published_date_text": "2026-03-06",
+      "key_fact_snippet": "IC載板廠欣興3月起再度調漲ABF載板，客戶為了搶產能，與欣興簽下長期合約",
+      "pricing_or_leadtime_snippet": "3月起再度調漲ABF載板"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-06",
+    "title": "大语言模型多智能体强化学习中的情境反事实信用分配",
+    "summary": "论文提出了一种针对大语言模型驱动的多智能体系统的信用分配新方法。该方法利用情境化反事实分析来优化协作多智能体强化学习中的奖励分配。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2603.06859",
+    "canonical_url": "https://arxiv.org/abs/2603.06859",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "多智能体",
+      "强化学习",
+      "信用分配",
+      "MARL"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Contextual Counterfactual Credit Assignment for Multi-Agent Reinforcement Learning in LLM",
+      "published_date_text": "Submitted on 6 Mar 2026",
+      "key_fact_snippet": "Cooperative multi-agent reinforcement learning systems powered by LLMs are frequently optimized",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-06",
+    "title": "欣兴电子股价3月6日跌至432台币，反映ABF基板市场动态",
+    "summary": "IC基板大厂欣兴电子此前曾突破500台币创历史新高，但受市场动态影响，3月6日股价跌至432台币。该波动反映了ABF基板市场在AI需求增长背景下的短期调整。",
+    "source": "X (Twitter)",
+    "url": "https://x.com/jukan05/status/2030660410794451303",
+    "canonical_url": "https://x.com/jukan05/status/2030660410794451303",
+    "region": "China",
+    "segment": "供应链",
+    "tags": [
+      "欣兴电子",
+      "ABF基板",
+      "股价波动",
+      "半导体",
+      "台湾"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "ABF substrate",
+      "value": "432",
+      "unit": "TWD",
+      "context": "Unimicron Technology fell to TWD 432 on March 6 amid market dynamics after previously hitting an all-time high above TWD 500.",
+      "channel_vendor": "Unimicron",
+      "geo": "Taiwan"
+    },
+    "evidence": {
+      "title_on_page": "IC substrate and PCB major Unimicron Technology previously broke above TWD 500, hitting an all-time high, but fell to TWD 432 on March 6 amid",
+      "published_date_text": "March 6, 2026",
+      "key_fact_snippet": "Unimicron Technology previously broke above TWD 500... but fell to TWD 432 on March 6.",
+      "pricing_or_leadtime_snippet": "fell to TWD 432 on March 6"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-06",
+    "title": "英特尔EMIB作为CoWoS替代方案获关注，推动基板投资复苏",
+    "summary": "全球AI激增大幅增加了对先进封装的需求，英特尔的EMIB技术作为台积电CoWoS的替代方案正获得关注。这一趋势正在推动IC基板投资的复苏。",
+    "source": "DigiTimes",
+    "url": "https://www.digitimes.com/news/a20260306PD218/intel-ic-substrate-investment-tsmc-capacity.html",
+    "canonical_url": "https://digitimes.com/news/a20260306PD218/intel-ic-substrate-investment-tsmc-capacity.html",
+    "region": "Global",
+    "segment": "供应链/CoWoS",
+    "tags": [
+      "Intel",
+      "EMIB",
+      "CoWoS",
+      "IC基板",
+      "先进封装"
+    ],
+    "event_type": "analysis",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Intel's EMIB gains traction as CoWoS alternative, reviving IC substrate investment",
+      "published_date_text": "Mar 6, 2026, 15:24",
+      "key_fact_snippet": "The global AI surge has sharply increased demand for advanced packaging, making Intel's EMIB a viable CoWoS alternative",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "并行科技拟斥资8066万元采购GPU服务器及存储设备",
+    "summary": "并行科技于2026年3月5日公告拟投入不超过8066万元采购GPU算力服务器及存储设备，其中GPU服务器采购额不超2736万元，设备预计于2026年3月20日前交付。",
+    "source": "证券时报",
+    "url": "https://finance.sina.com.cn/stock/zqgd/2026-03-05/doc-inhpxwvi9724075.shtml",
+    "canonical_url": "https://finance.sina.com.cn/stock/zqgd/2026-03-05/doc-inhpxwvi9724075.shtml",
+    "region": "China",
+    "segment": "采购与TCO",
+    "tags": [
+      "并行科技",
+      "GPU服务器采购",
+      "8066万元",
+      "3月20日交付",
+      "算力池扩充"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "contract_price",
+      "item": "GPU算力服务器",
+      "value": "2736",
+      "unit": "万元",
+      "context": "并行科技拟向浙江天极采购GPU算力服务器金额不超2736万元，设备预计于2026年3月20日前交付",
+      "channel_vendor": "浙江天极",
+      "geo": "China"
+    },
+    "evidence": {
+      "title_on_page": "并行科技拟8066 万元采购GPU 服务器及存储设备",
+      "published_date_text": "2026-03-05",
+      "key_fact_snippet": "公司拟合计投入不超过8066万元采购GPU算力服务器及存储设备",
+      "pricing_or_leadtime_snippet": "设备预计于2026年3月20日前交付"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "技嘉显卡3月继续涨价：大部分型号定价提高50元或以上",
+    "summary": "技嘉宣布3月继续上调显卡价格，大部分型号定价提高50元或以上。其中RTX 5090 D v2系列普遍上涨1000元，RTX 5070 Ti和5080系列上涨200-300元，入门型号上涨50-100元。",
+    "source": "腾讯新闻",
+    "url": "https://view.inews.qq.com/a/20260305A06CLX00",
+    "canonical_url": "https://view.inews.qq.com/a/20260305A06CLX00",
+    "region": "China",
+    "segment": "渠道与现货",
+    "tags": [
+      "技嘉",
+      "显卡",
+      "RTX 50系列",
+      "涨价",
+      "中国"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "RTX 5090/5080/5070",
+      "value": "50-1000",
+      "unit": "CNY/张",
+      "context": "Gigabyte raised prices for most graphics card models by 50 yuan or more in March, with high-end models seeing increases up to 1000 yuan.",
+      "channel_vendor": "GIGABYTE",
+      "geo": "China"
+    },
+    "evidence": {
+      "title_on_page": "技嘉显卡3月继续涨价：大部分型号定价提高50元或以上",
+      "published_date_text": "2026-03-05",
+      "key_fact_snippet": "RTX 5090 D v2系列- 普遍上涨1000元。RTX 5070 Ti和RTX 5080系列- 上涨200-300元。",
+      "pricing_or_leadtime_snippet": "大部分型号定价提高50元或以上"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "潜在空间测试时梯度下降的大语言模型推理方法",
+    "summary": "论文提出在潜在空间进行测试时梯度下降以提升LLM推理能力的新架构。该方法在数学推理任务上表现优于现有测试时基线，并与训练方法性能相当。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2603.04948",
+    "canonical_url": "https://arxiv.org/abs/2603.04948",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "测试时计算",
+      "梯度下降",
+      "LLM推理",
+      "潜在空间"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "LLM Reasoning via Test-Time Gradient Descent in Latent Space",
+      "published_date_text": "Submitted on 5 Mar 2026",
+      "key_fact_snippet": "Our method outperforms all test-time baselines and achieves performance on par with training-based methods",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "Mario: 大语言模型的多模态图推理框架",
+    "summary": "研究提出Mario统一框架，通过解决跨模态一致性问题实现大语言模型在多模态图上的推理。该方法处理具有文本和视觉属性节点及提供结构线索边的多模态图。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2603.05181",
+    "canonical_url": "https://arxiv.org/abs/2603.05181",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "多模态",
+      "图推理",
+      "LLM",
+      "跨模态一致性"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Mario: Multimodal Graph Reasoning with Large Language Models",
+      "published_date_text": "Submitted on 5 Mar 2026",
+      "key_fact_snippet": "Mario is a unified framework that enables LLM-based reasoning on multimodal graphs",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "美国 reportedly考虑实施全面新的芯片出口管制措施",
+    "summary": "据报道，美国监管机构已起草新规，要求向美国境外任何地区运输AI芯片均需获得美国政府批准。该措施被视为对全球AI芯片出口的全面管制。",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/03/05/us-reportedly-considering-sweeping-new-chip-export-controls/",
+    "canonical_url": "https://techcrunch.com/2026/03/05/us-reportedly-considering-sweeping-new-chip-export-controls",
+    "region": "US",
+    "segment": "出口管制",
+    "tags": [
+      "美国",
+      "出口管制",
+      "AI芯片",
+      "政府审批"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "US reportedly considering sweeping new chip export controls",
+      "published_date_text": "March 5, 2026",
+      "key_fact_snippet": "U.S. regulators have allegedly drafted rules that would require U.S. government approval to ship AI chips anywhere outside the U.S.",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "英伟达暂停对华H200芯片生产并转移台积电产能至Vera Rubin",
+    "summary": "据金融时报报道，英伟达已停止生产面向中国市场的H200人工智能芯片。由于出口管制的不确定性，该公司将台积电的产能转移至下一代Vera Rubin芯片的生产。",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/world/china/nvidia-refocuses-tsmc-capacity-export-controls-stall-china-sales-ft-reports-2026-03-05/",
+    "canonical_url": "https://reuters.com/world/china/nvidia-refocuses-tsmc-capacity-export-controls-stall-china-sales-ft-reports-2026-03-05",
+    "region": "China",
+    "segment": "出口管制/供应链",
+    "tags": [
+      "NVIDIA",
+      "H200",
+      "出口管制",
+      "台积电",
+      "Vera Rubin"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Nvidia halts China-bound H200 output, shifts TSMC capacity to Vera Rubin, FT reports",
+      "published_date_text": "March 5, 2026",
+      "key_fact_snippet": "Nvidia has stopped production of its second-most advanced artificial intelligence chips, known as H200 chips, intended for the Chinese market",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "2026 AI 内存短缺：IT 领导者须知",
+    "summary": "HBS.net文章指出AI驱动的结构化内存芯片短缺正影响服务器、笔记本电脑和网络成本。分析认为这一短缺将持续到2027年及以后，企业需调整基础设施计划以应对。",
+    "source": "HBS.net",
+    "url": "https://www.hbs.net/blog/ai-memory-shortage",
+    "canonical_url": "https://hbs.net/blog/ai-memory-shortage",
+    "region": "Global",
+    "segment": "内存与成本",
+    "tags": [
+      "内存短缺",
+      "HBM",
+      "DDR5",
+      "IT采购",
+      "供应链"
+    ],
+    "event_type": "analysis",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "AI Memory Shortage 2026: What IT Leaders Need to Know",
+      "published_date_text": "Updated: March 5, 2026",
+      "key_fact_snippet": "The result is a structural shortage that most analysts expect to last through 2027 and beyond",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "台积电20年先进封装战略巩固与苹果和英伟达合作",
+    "summary": "台积电公布20年先进封装战略规划，确保与苹果和英伟达的长期合作关系。CoWoS产能分配策略将优先满足AI GPU需求，英伟达已预订2026-2027年过半产能。",
+    "source": "DigiTimes",
+    "url": "https://www.digitimes.com/news/a20260305PD226/tsmc-ic-manufacturing-packaging-cowos.html",
+    "canonical_url": "https://digitimes.com/news/a20260305PD226/tsmc-ic-manufacturing-packaging-cowos.html",
+    "region": "APAC",
+    "segment": "AI芯片/CoWoS",
+    "tags": [
+      "台积电",
+      "CoWoS",
+      "先进封装",
+      "英伟达",
+      "苹果"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "TSMC's 20-year advanced packaging strategy secures Apple and Nvidia ties",
+      "published_date_text": "Mar 5, 2026, 14:59",
+      "key_fact_snippet": "TSMC's 20-year advanced packaging strategy secures Apple and Nvidia ties",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "内存现货价格飙升，采购资金压力剧增",
+    "summary": "全球内存市场供需缺口扩大，制造商掌握强定价权并限制现货市场供应，导致DDR4和DDR5现货价格大幅上涨。采购方资本支出压力显著增加，现货市场流动性趋紧。",
+    "source": "DIGITIMES",
+    "url": "https://www.digitimes.com/news/a20260305PD216/nand-ddr4-ddr5-memory-market.html",
+    "canonical_url": "https://digitimes.com/news/a20260305PD216/nand-ddr4-ddr5-memory-market.html",
+    "region": "Global",
+    "segment": "内存与成本",
+    "tags": [
+      "内存",
+      "DDR4",
+      "DDR5",
+      "现货价格",
+      "采购"
+    ],
+    "event_type": "analysis",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "DDR4/DDR5",
+      "value": "",
+      "unit": "",
+      "context": "Memory spot prices surge, straining procurement capital as manufacturers limit spot-market supply.",
+      "channel_vendor": "",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "Memory spot prices surge, straining procurement capital and risking supply chain stability",
+      "published_date_text": "Mar. 05, 2026",
+      "key_fact_snippet": "The global memory market faces a widening supply-demand gap as manufacturers wield strong pricing power",
+      "pricing_or_leadtime_snippet": "Memory spot prices surge, straining procurement capital"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-05",
+    "title": "美国拟起草新规要求英伟达和AMD全球AI芯片销售需获许可",
+    "summary": "美国政府正在起草新规，要求英伟达和AMD等公司在向海外销售AI加速芯片前必须获得美国政府许可。该拟议规则将赋予美国对几乎全部海外AI芯片出口的审批权。",
+    "source": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-05/us-drafts-rules-for-sweeping-power-over-nvidia-s-global-sales",
+    "canonical_url": "https://bloomberg.com/news/articles/2026-03-05/us-drafts-rules-for-sweeping-power-over-nvidia-s-global-sales",
+    "region": "US",
+    "segment": "出口管制",
+    "tags": [
+      "美国",
+      "出口管制",
+      "NVIDIA",
+      "AMD",
+      "AI芯片"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "US Considers Requiring Permits for Nvidia, AMD Global AI Chip Sales",
+      "published_date_text": "March 5, 2026",
+      "key_fact_snippet": "The proposed rule would require companies to seek US permission for virtually all exports of AI accelerators",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-04",
+    "title": "Memex(RL): 通过强化学习扩展长程大语言模型智能体",
+    "summary": "研究提出Memex索引经验记忆机制，通过强化学习优化读写行为以解决长程任务中的上下文窗口瓶颈。实证显示该方法在长程任务中提高了成功率并减少了上下文使用量。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2603.04257",
+    "canonical_url": "https://arxiv.org/abs/2603.04257",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "LLM Agent",
+      "长程任务",
+      "记忆机制",
+      "强化学习"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Memex(RL): Scaling Long-Horizon LLM Agents via Reinforcement Learning",
+      "published_date_text": "Submitted on 4 Mar 2026",
+      "key_fact_snippet": "Memex maintains an indexed experience memory mechanism that compresses context without discarding evidence",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-04",
+    "title": "SK电信、Supermicro和施耐德电气签署AI数据中心部署合作备忘录",
+    "summary": "SK电信、Supermicro和施耐德电气在MWC26期间签署谅解备忘录，旨在提供AI数据中心部署的总解决方案。合作将利用三方优势缩短AIDC建设周期并缓解供应瓶颈。",
+    "source": "HPCwire",
+    "url": "https://www.hpcwire.com/off-the-wire/sk-telecom-supermicro-and-schneider-electric-sign-mou-on-total-solutions-for-ai-data-center-deployment/",
+    "canonical_url": "https://hpcwire.com/off-the-wire/sk-telecom-supermicro-and-schneider-electric-sign-mou-on-total-solutions-for-ai-data-center-deployment",
+    "region": "Global",
+    "segment": "数据中心",
+    "tags": [
+      "SK电信",
+      "Supermicro",
+      "施耐德电气",
+      "AI数据中心",
+      "MOU"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "SK Telecom, Supermicro and Schneider Electric Sign MOU on Total Solutions for AI Data Center Deployment",
+      "published_date_text": "BARCELONA, Spain, March 4, 2026",
+      "key_fact_snippet": "The agreement aims to shorten AIDC construction timelines and help alleviate supply bottlenecks",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "MiniMax创始人闫俊杰展望2026年AI发展三大方向",
+    "summary": "MiniMax创始人兼CEO闫俊杰在2026年3月3日的业绩电话会上提出2026年AI发展三大方向：编程领域向L4-L5级\"同事级\"智能进化、办公场景加速渗透、多模态创作走向\"直出\"。",
+    "source": "腾讯新闻",
+    "url": "https://news.qq.com/rain/a/20260303A00A2Q00",
+    "canonical_url": "https://news.qq.com/rain/a/20260303A00A2Q00",
+    "region": "China",
+    "segment": "大模型发布",
+    "tags": [
+      "MiniMax",
+      "闫俊杰",
+      "智能体",
+      "代码模型",
+      "多模态"
+    ],
+    "event_type": "analysis",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "MiniMax创始人展望2026年AI发展三大方向",
+      "published_date_text": "2026-03-03",
+      "key_fact_snippet": "闫俊杰做了三个判断：编程领域出现L4-L5级别的智能；办公领域复刻去年编程的进步速度；多模态创作走向\"直出\"",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "Supermicro 扩大对 AI-RAN 和主权 AI 解决方案的支持",
+    "summary": "Supermicro 扩大对 AI-RAN 和主权 AI 解决方案的支持，提供高性能、高效且可扩展的 AI 基础设施。推出 ARS-111L-FR 短深度 1U 系统，专为分布式 RAN 工作量设计。",
+    "source": "电子工程专辑",
+    "url": "https://www.eetrend.com/content/2026/100599088.html",
+    "canonical_url": "https://eetrend.com/content/2026/100599088.html",
+    "region": "Global",
+    "segment": "AI 芯片/云计算/数据中心",
+    "tags": [
+      "Supermicro",
+      "AI-RAN",
+      "主权 AI",
+      "ARS-111L-FR",
+      "电信"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Supermicro 扩大对 AI-RAN 和主权 AI 解决方案的支持，旨在提供高性能",
+      "published_date_text": "2026-03-03",
+      "key_fact_snippet": "ARS-111L-FR 是一款专为分布式 RAN 工作量设计的短深度 1U 系统",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "AI时代的数学家：探讨AI对数学实践与定理证明的影响",
+    "summary": "arXiv发布了题为《AI时代的数学家》的论文，探讨AI技术在形式化与非形式化数学推理中的应用。文章呼吁数学家关注技术发展及其对数学研究、验证和教学的颠覆性影响。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/html/2603.03684v2",
+    "canonical_url": "https://arxiv.org/html/2603.03684v2",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "AI与数学",
+      "定理证明",
+      "形式化推理",
+      "数学教育"
+    ],
+    "event_type": "analysis",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "[2603.03684] Mathematicians in the age of AI",
+      "published_date_text": "2026-03-03",
+      "key_fact_snippet": "AI can prove research-level theorems in mathematics, both formally and informally",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "华硕上调中国区RTX 50系列显卡价格，Radeon系列定价不变",
+    "summary": "据Board Channel消息来源，华硕已于2026年2月底开始调整GPU价格，主要涉及GeForce RTX 50系列。Radeon系列价格保持不变。",
+    "source": "VideoCardz",
+    "url": "https://videocardz.com/newz/asus-reportedly-raises-geforce-rtx-50-gpu-pricing-in-china-radeon-pricing-unchanged",
+    "canonical_url": "https://videocardz.com/newz/asus-reportedly-raises-geforce-rtx-50-gpu-pricing-in-china-radeon-pricing-unchanged",
+    "region": "China",
+    "segment": "渠道与现货",
+    "tags": [
+      "GPU价格",
+      "华硕",
+      "RTX 50",
+      "中国市场"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "GeForce RTX 50",
+      "value": "",
+      "unit": "",
+      "context": "ASUS has reportedly adjusted GPU pricing again, with the change said to have started in late February 2026",
+      "channel_vendor": "ASUS",
+      "geo": "China"
+    },
+    "evidence": {
+      "title_on_page": "ASUS reportedly raises GeForce RTX 50 GPU pricing in China, Radeon pricing unchanged",
+      "published_date_text": "2026-03-03 18:55",
+      "key_fact_snippet": "ASUS has reportedly adjusted GPU pricing again, with the change said to have started in late February 2026",
+      "pricing_or_leadtime_snippet": "ASUS has reportedly adjusted GPU pricing again"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "为何AI初创企业以两种不同价格出售同股权",
+    "summary": "部分AI初创企业正采用双重定价机制出售股权，导致同一公司的估值出现差异。这种现象反映了当前融资环境下投资者对AI领域风险与回报的不同评估策略。",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/03/03/why-ai-startups-are-selling-the-same-equity-at-two-different-prices/",
+    "canonical_url": "https://techcrunch.com/2026/03/03/why-ai-startups-are-selling-the-same-equity-at-two-different-prices",
+    "region": "US",
+    "segment": "投融资",
+    "tags": [
+      "AI初创",
+      "股权融资",
+      "估值",
+      "双重定价",
+      "风险投资"
+    ],
+    "event_type": "analysis",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Why AI startups are selling the same equity at two different prices",
+      "published_date_text": "March 3, 2026",
+      "key_fact_snippet": "Even though the true, blended valuation for these startups is lower than $1 billion",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_funding_ma",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "Supermicro在MWC发布三款NVIDIA驱动的AI-RAN服务器",
+    "summary": "Supermicro在巴塞罗那世界移动通信大会（MWC）上展示了三款NVIDIA驱动的AI-RAN服务器。这些新服务器系列专为电信网络和边缘分布式AI工作负载优化。",
+    "source": "SDxCentral",
+    "url": "https://www.sdxcentral.com/news/supermicro-unveils-trio-of-nvidia-powered-ai-ran-servers-at-mwc/",
+    "canonical_url": "https://sdxcentral.com/news/supermicro-unveils-trio-of-nvidia-powered-ai-ran-servers-at-mwc",
+    "region": "Global",
+    "segment": "行业应用与落地",
+    "tags": [
+      "Supermicro",
+      "AI-RAN",
+      "MWC",
+      "NVIDIA",
+      "电信"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Supermicro unveils trio of Nvidia-powered AI-RAN servers at MWC",
+      "published_date_text": "03 Mar 2026",
+      "key_fact_snippet": "Showcased at Mobile World Congress in Barcelona, the trio of servers are touted as being optimized for telecom networks",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "AI内存紧缺迫使DRAM市场进入“按小时定价”模式",
+    "summary": "Yahoo Finance转载Tom's Hardware/Reuters报道称，AI内存紧缺迫使DRAM市场进入“按小时定价”模式，中小企业为争夺稀缺资源而挣扎。现货价格波动剧烈，传统定价机制失效。",
+    "source": "Reuters",
+    "url": "https://finance.yahoo.com/news/ai-memory-crunch-forces-dram-171136101.html",
+    "canonical_url": "https://finance.yahoo.com/news/ai-memory-crunch-forces-dram-171136101.html",
+    "region": "Global",
+    "segment": "内存与成本",
+    "tags": [
+      "DRAM",
+      "按小时定价",
+      "内存紧缺",
+      "现货市场",
+      "中小企业"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "spot_price",
+      "item": "DRAM",
+      "value": "Hourly pricing",
+      "unit": "N/A",
+      "context": "AI memory crunch forces DRAM market into 'hourly pricing' model as smaller firms fight for scraps.",
+      "channel_vendor": "Spot Market",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "AI memory crunch forces DRAM market into 'hourly pricing' model",
+      "published_date_text": "March 3, 2026",
+      "key_fact_snippet": "Small and medium-sized businesses fighting for survival as DRAM market shifts to hourly pricing",
+      "pricing_or_leadtime_snippet": "DRAM market into 'hourly pricing' model"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "Moonshot AI开放平台提供Kimi K2.5多模态大模型API服务",
+    "summary": "Moonshot AI开放平台提供Kimi K2.5大模型API服务，支持256K超长上下文、多模态理解和Tool Calling。平台页面显示K2.5为最新全能模型，具备原生多模态架构。",
+    "source": "Moonshot AI",
+    "url": "https://platform.moonshot.cn/",
+    "canonical_url": "https://platform.moonshot.cn/",
+    "region": "China",
+    "segment": "大模型发布",
+    "tags": [
+      "Kimi K2.5",
+      "多模态",
+      "256K上下文",
+      "API服务",
+      "Moonshot AI"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Moonshot AI 开放平台- Kimi K2.5 大模型API 服务",
+      "published_date_text": "2026-03-03 (inferred from search result snippet date)",
+      "key_fact_snippet": "Kimi K2.5 开放平台，提供万亿参数K2.5 大模型API，支持256K 超长上下文、多模态理解和Tool Calling",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_software",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "2026-2032年高端游戏显卡市场展望：规模预计达2140亿美元",
+    "summary": "报告显示高端游戏显卡市场2024年估值555.9亿美元，预计2032年将增长至2140.3亿美元。报告涵盖了AIB渠道供应及价格趋势分析。",
+    "source": "Intel Market Research",
+    "url": "https://www.intelmarketresearch.com/high-end-gaming-graphics-card-market-24314",
+    "canonical_url": "https://intelmarketresearch.com/high-end-gaming-graphics-card-market-24314",
+    "region": "Global",
+    "segment": "渠道与现货",
+    "tags": [
+      "显卡市场",
+      "游戏GPU",
+      "市场预测",
+      "AIB"
+    ],
+    "event_type": "analysis",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "HighEnd Gaming Graphics Card Market Outlook 2026-2032",
+      "published_date_text": "2026-03-03",
+      "key_fact_snippet": "valued at $55.59 billion in 2024 and projected to reach $214.03 billion",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-03",
+    "title": "预计2Q26 DRAM价格暴涨70%，Nvidia GTC 2026点燃AI内存热潮",
+    "summary": "DigiTimes报道受AI数据中心扩张推动，预计2026年第二季度DRAM价格将上涨高达70%。Nvidia GTC 2026大会进一步点燃了AI内存市场的看涨情绪，HBM3e需求强劲。",
+    "source": "DigiTimes",
+    "url": "https://www.digitimes.com/news/a20260303PD201/dram-hbm-expansion-nvidia-gtc-2026.html",
+    "canonical_url": "https://digitimes.com/news/a20260303PD201/dram-hbm-expansion-nvidia-gtc-2026.html",
+    "region": "Global",
+    "segment": "内存与成本",
+    "tags": [
+      "DRAM价格",
+      "HBM3e",
+      "Nvidia GTC 2026",
+      "AI内存",
+      "价格上涨"
+    ],
+    "event_type": "analysis",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "DRAM/HBM3e",
+      "value": "Up to 70%",
+      "unit": "%",
+      "context": "DRAM prices to surge up to 70% in 2Q26 driven by AI-driven data centre expansion.",
+      "channel_vendor": "N/A",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "DRAM prices to surge up to 70% in 2Q26; Nvidia GTC 2026 ignites AI memory rally",
+      "published_date_text": "Tuesday 3 March 2026",
+      "key_fact_snippet": "AI-driven data centre expansion has pushed the memory market into a severe shortage",
+      "pricing_or_leadtime_snippet": "DRAM prices to surge up to 70% in 2Q26"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-02",
+    "title": "阿里巴巴统一AI品牌为\"千问\" 通义实验室为机构名称",
+    "summary": "阿里巴巴于2026年3月2日宣布将AI品牌统一为\"千问\"（英文Qwen），此前使用的\"通义千问\"名称不再作为品牌。通义实验室保留为AI机构组织名称，以避免多名称混淆。",
+    "source": "新浪科技",
+    "url": "https://finance.sina.com.cn/tech/2026-03-02/doc-inhpqkns8261315.shtml",
+    "canonical_url": "https://finance.sina.com.cn/tech/2026-03-02/doc-inhpqkns8261315.shtml",
+    "region": "China",
+    "segment": "大模型发布",
+    "tags": [
+      "阿里巴巴",
+      "千问",
+      "Qwen",
+      "品牌统一",
+      "通义实验室"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "阿里巴巴：AI品牌统一为千问，\"通义实验室\"为AI机构组织名称",
+      "published_date_text": "2026-03-02",
+      "key_fact_snippet": "阿里巴巴大模型品牌中文为\"千问大模型\"，英文为\"Qwen\"，\"通义实验室\"为AI机构组织名称",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_software",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-02",
+    "title": "内存成本飙升，中国智能手机面临2026年首轮涨价潮",
+    "summary": "一财全球报道内存芯片成本飙升正传导至下游，中国智能手机市场面临2026年首轮涨价潮。分销商指出若内存价格维持高位，2026年可能出现多轮涨价。",
+    "source": "Yicai Global",
+    "url": "https://www.yicaiglobal.com/news/china-smartphones-face-first-2026-price-wave-as-memory-costs-surge-90",
+    "canonical_url": "https://yicaiglobal.com/news/china-smartphones-face-first-2026-price-wave-as-memory-costs-surge-90",
+    "region": "China",
+    "segment": "内存与成本",
+    "tags": [
+      "智能手机",
+      "内存成本",
+      "涨价潮",
+      "DRAM",
+      "供应链"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "Memory chips",
+      "value": "Surge",
+      "unit": "N/A",
+      "context": "Prices of memory chips for smartphones began rising in the second half of 2024, up more than 80% year-over-year.",
+      "channel_vendor": "Distributors",
+      "geo": "China"
+    },
+    "evidence": {
+      "title_on_page": "Chinese Smartphone Prices Are Set to Rise Soon as Memory Costs Surge",
+      "published_date_text": "2026-03-02",
+      "key_fact_snippet": "If memory prices remain elevated, the market could see multiple rounds of price increases in 2026",
+      "pricing_or_leadtime_snippet": "Memory costs surge"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-02",
+    "title": "技嘉在MWC 2026展示端到端基础设施助力电信AI转型",
+    "summary": "技嘉在MWC 2026上展示了其端到端基础设施解决方案，旨在助力电信行业的AI转型。方案涵盖从AI工厂、超级计算到数字孪生的全方位应用，涉及GPU服务器供应链。",
+    "source": "GIGABYTE",
+    "url": "https://www.gigabyte.com/Press/News/2368",
+    "canonical_url": "https://gigabyte.com/Press/News/2368",
+    "region": "Global",
+    "segment": "行业应用与落地",
+    "tags": [
+      "技嘉",
+      "MWC 2026",
+      "电信AI",
+      "AI服务器",
+      "端到端解决方案"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "GIGABYTE Powers Telecom AI Transformation with End-to-End Infrastructure at MWC 2026",
+      "published_date_text": "Mar 02, 2026",
+      "key_fact_snippet": "From AI factories and supercomputing to digital twins, GIGABYTE showcases end-to-end infrastructure",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-01",
+    "title": "强化学习中通过参考引导探索解决难题的方法",
+    "summary": "论文提出参考引导微调方法，利用人类撰写的参考解答在难题上合成高质量正向样本以解决奖励稀疏问题。该方法在数学推理强化学习训练中提高了模型采样效率。",
+    "source": "arXiv",
+    "url": "https://arxiv.org/abs/2603.01223",
+    "canonical_url": "https://arxiv.org/abs/2603.01223",
+    "region": "Global",
+    "segment": "科研与算法/论文/顶会/评测基准",
+    "tags": [
+      "强化学习",
+      "奖励稀疏",
+      "参考引导",
+      "数学推理"
+    ],
+    "event_type": "technical",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Learn Hard Problems During RL with Reference Guided Fine-tuning",
+      "published_date_text": "Submitted on 1 Mar 2026",
+      "key_fact_snippet": "Reference-guided fine-tuning uses human-written solutions to synthesize high-quality positive samples",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_research",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-01",
+    "title": "技嘉亮相 2026 年世界移动通信大会，以端到端基础设施助力电信 AI 转型",
+    "summary": "技嘉在 MWC 2026 展示专为电信行业设计的端到端 AI 基础设施产品组合，推出 GB300 NVL72 液冷机架级平台。该平台在单一系统中集成 72 颗 NVIDIA Blackwell Ultra GPU 和 36 颗 NVIDIA Grace CPU。",
+    "source": "BusinessWire",
+    "url": "https://www.businesswire.com/news/home/20260223888134/zh-CN",
+    "canonical_url": "https://businesswire.com/news/home/20260223888134/zh-CN",
+    "region": "Global",
+    "segment": "AI 芯片/云计算/数据中心",
+    "tags": [
+      "技嘉",
+      "MWC 2026",
+      "GB300 NVL72",
+      "Blackwell Ultra",
+      "液冷服务器"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "GIGABYTE 亮相 2026 年世界移动通信大会，以端到端基础设施助力",
+      "published_date_text": "2026-03-01",
+      "key_fact_snippet": "GB300 NVL72 平台在单一系统中集成了 72 颗 NVIDIA Blackwell Ultra GPU 和 36 颗 NVIDIA Grace CPU",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-03-01",
+    "title": "GPU内存紧缺加剧AI供应链动荡",
+    "summary": "台积电确认其CoWoS产线在2026年已售罄，导致等待组装的GPU在OSAT合作伙伴处堆积。尽管ASE和SPIL加速扩张，但基板工具交付周期仍长达12-18个月。",
+    "source": "AI Certs",
+    "url": "https://www.aicerts.ai/news/gpu-memory-crunch-deepens-ai-supply-chain-turmoil/",
+    "canonical_url": "https://aicerts.ai/news/gpu-memory-crunch-deepens-ai-supply-chain-turmoil",
+    "region": "Global",
+    "segment": "供应链",
+    "tags": [
+      "CoWoS",
+      "台积电",
+      "GPU",
+      "内存紧缺",
+      "交付周期"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "lead_time",
+      "item": "CoWoS",
+      "value": "12-18",
+      "unit": "months",
+      "context": "substrate tooling lead times run 12-18 months despite OSAT expansions",
+      "channel_vendor": "",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "GPU Memory Crunch Deepens AI Supply Chain Turmoil",
+      "published_date_text": "March 1, 2026",
+      "key_fact_snippet": "TSMC confirms CoWoS lines remain sold out into 2026",
+      "pricing_or_leadtime_snippet": "substrate tooling lead times run 12-18 months"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-28",
+    "title": "Supermicro 与 VAST Data 携手 NVIDIA 推出全新企业级 AI 数据平台",
+    "summary": "Supermicro 与 VAST Data 合作推出企业级 AI 数据平台解决方案，2U 机箱规格下可支持两个 NVIDIA RTX PRO 6000 Blackwell Server Edition GPU。集成 VAST AI 操作系统软件堆栈。",
+    "source": "自动化网",
+    "url": "https://www.zidonghua.com.cn/news/program/82404.html",
+    "canonical_url": "https://zidonghua.com.cn/news/program/82404.html",
+    "region": "Global",
+    "segment": "行业应用与落地/医疗金融制造教育自动驾驶",
+    "tags": [
+      "Supermicro",
+      "VAST Data",
+      "RTX PRO 6000",
+      "企业级 AI",
+      "2U 服务器"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Supermicro 与 VAST Data 携手 NVIDIA 推出全新企业级 AI 数据平台解决",
+      "published_date_text": "2026-02-28",
+      "key_fact_snippet": "这款计算服务器在紧凑的 2U 机箱规格下，可支持两个 NVIDIA RTX PRO 6000 Blackwell Server Edition GPU",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_application",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-27",
+    "title": "DRAM和NAND价格连续11个月上涨，DDR4均价创历史新高",
+    "summary": "DRAM和NAND闪存价格连续11个月上涨，TrendForce数据显示PC DRAM价格季度环比上涨110%-115%。DDR4均价创下历史新高，内存市场持续供不应求。",
+    "source": "Korea Herald/Chosun",
+    "url": "https://biz.chosun.com/en/en-it/2026/02/27/NW3HNNYCVFADDDL36RWOA4NK5U/",
+    "canonical_url": "https://biz.chosun.com/en/en-it/2026/02/27/NW3HNNYCVFADDDL36RWOA4NK5U",
+    "region": "Global",
+    "segment": "内存与成本",
+    "tags": [
+      "DRAM",
+      "NAND",
+      "价格上涨",
+      "DDR4",
+      "TrendForce"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "DRAM/NAND",
+      "value": "110-115",
+      "unit": "%",
+      "context": "TrendForce said PC DRAM prices rose 110% to 115% quarter over quarter, extending an 11-month rally.",
+      "channel_vendor": "",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "Dram, nand extend 11-month rally as prices surge and stabilize",
+      "published_date_text": "Feb. 27, 2026",
+      "key_fact_snippet": "TrendForce said PC DRAM prices rose 110% to 115% quarter over quarter.",
+      "pricing_or_leadtime_snippet": "Dram, nand extend 11-month rally as prices surge"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-26",
+    "title": "英伟达确认供应限制可能影响游戏GPU可用性",
+    "summary": "英伟达CFO科莱特·克雷斯在Q4财报电话会议上确认，游戏部门可能面临供应约束。GDDR7内存短缺可能导致2026年GeForce GPU产量削减30-40%。",
+    "source": "TechPowerUp",
+    "url": "https://www.techpowerup.com/346794/nvidia-confirms-supply-constraints-may-limit-gaming-gpu-availability",
+    "canonical_url": "https://techpowerup.com/346794/nvidia-confirms-supply-constraints-may-limit-gaming-gpu-availability",
+    "region": "Global",
+    "segment": "AI芯片/GDDR7",
+    "tags": [
+      "英伟达",
+      "GPU",
+      "GDDR7",
+      "供应限制",
+      "游戏显卡"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "supply_tightness",
+      "item": "GDDR7",
+      "value": "30-40",
+      "unit": "%",
+      "context": "30-40% of Nvidia's GeForce GPU production could be axed due to GDDR7 memory shortage",
+      "channel_vendor": "NVIDIA",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "NVIDIA Confirms Supply Constraints May Limit Gaming GPU Availability",
+      "published_date_text": "Feb 26, 2026",
+      "key_fact_snippet": "NVIDIA CFO Colette Kress confirmed that the gaming sector may struggle during the company's latest Q4 earnings call",
+      "pricing_or_leadtime_snippet": "30-40% of GeForce GPU production could be axed"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-26",
+    "title": "IDC：2026年全球智能手机市场将遭遇史上最大降幅，内存价格上涨是主因",
+    "summary": "IDC预测2026年全球智能手机出货量将下降12.9%至11.2亿部，创十多年来最低水平。内存芯片价格飙升推动智能手机平均售价上涨14%至创纪录的523美元。",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/business/media-telecom/smartphone-market-set-biggest-ever-decline-2026-memory-price-surge-idc-says-2026-02-26/",
+    "canonical_url": "https://reuters.com/business/media-telecom/smartphone-market-set-biggest-ever-decline-2026-memory-price-surge-idc-says-2026-02-26",
+    "region": "Global",
+    "segment": "内存与成本/渠道与现货",
+    "tags": [
+      "智能手机",
+      "内存价格",
+      "IDC",
+      "出货量下降",
+      "DRAM"
+    ],
+    "event_type": "analysis",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "DRAM",
+      "value": "14",
+      "unit": "%",
+      "context": "The average selling price of smartphones is projected to surge 14% to a record $523 this year",
+      "channel_vendor": "",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "Smartphone market set for biggest-ever decline in 2026 on memory price surge, IDC says",
+      "published_date_text": "Feb 26, 2026",
+      "key_fact_snippet": "Global smartphone market is poised to suffer its biggest decline ever in 2026, sinking to a more than decade low in shipments",
+      "pricing_or_leadtime_snippet": "average selling price surge 14% to record $523"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-26",
+    "title": "2026年玻璃纤维短缺持续，欣兴电子上调基板价格",
+    "summary": "DigiTimes报道2026年玻璃纤维（T-Glass）短缺持续，导致IC基板供应商欣兴电子（Unimicron）上调基板价格。AI先进封装对高速传输材料需求激增，加剧了原材料瓶颈。",
+    "source": "DigiTimes",
+    "url": "https://www.digitimes.com/news/a20260226PD219/unimicron-demand-2026-price-transmission.html",
+    "canonical_url": "https://digitimes.com/news/a20260226PD219/unimicron-demand-2026-price-transmission.html",
+    "region": "APAC",
+    "segment": "供应链",
+    "tags": [
+      "欣兴电子",
+      "ABF基板",
+      "玻璃纤维短缺",
+      "先进封装",
+      "成本上涨"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "ABF substrate",
+      "value": "Price increase",
+      "unit": "N/A",
+      "context": "Fiberglass shortage persists in 2026, prompting Unimicron to increase substrate prices.",
+      "channel_vendor": "Unimicron",
+      "geo": "Taiwan"
+    },
+    "evidence": {
+      "title_on_page": "Fiberglass shortage persists in 2026, Unimicron increases substrate price",
+      "published_date_text": "Thursday 26 February 2026",
+      "key_fact_snippet": "As demand for high-speed transmission in AI advanced packaging surges, IC substrate makers face material constraints",
+      "pricing_or_leadtime_snippet": "Unimicron increases substrate price"
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-26",
+    "title": "英伟达称已获批对华H200出货尚未确认收入",
+    "summary": "英伟达表示，尽管已获准向中国客户出货H200芯片，但由于交付延迟，截至2026年2月底尚未确认相关收入。公司预计游戏GPU供应紧张局面将持续数个季度。",
+    "source": "DigiTimes",
+    "url": "https://www.digitimes.com/news/a20260226VL204/nvidia-revenue-shipments-gaming-infrastructure.html",
+    "canonical_url": "https://digitimes.com/news/a20260226VL204/nvidia-revenue-shipments-gaming-infrastructure.html",
+    "region": "Global",
+    "segment": "出口管制",
+    "tags": [
+      "H200",
+      "中国出货",
+      "收入确认",
+      "出口许可",
+      "交付延迟"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "Nvidia says no revenue yet from approved China H200 shipments",
+      "published_date_text": "2026-02-26",
+      "key_fact_snippet": "Nvidia says no revenue yet from approved China H200 shipments due to delivery delays",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-26",
+    "title": "华硕发布优化液冷解决方案，降低高密度GPU机架能耗",
+    "summary": "华硕宣布推出优化液冷解决方案组合，涵盖直冷芯片、行级CDU及混合冷却系统。该方案旨在降低高密度GPU机架（如NVL72）的能耗成本。",
+    "source": "DIGITIMES",
+    "url": "https://www.digitimes.com/news/a20260225PR200/cooling-data-infrastructure.html",
+    "canonical_url": "https://digitimes.com/news/a20260225PR200/cooling-data-infrastructure.html",
+    "region": "APAC",
+    "segment": "采购与TCO",
+    "tags": [
+      "华硕",
+      "液冷",
+      "GPU机架",
+      "能耗",
+      "数据中心"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "ASUS Reveals Optimized Liquid-Cooling Solutions and Strategic Partner Framework",
+      "published_date_text": "Thursday 26 February 2026",
+      "key_fact_snippet": "ASUS today announced ASUS Optimized Liquid-Cooling Solutions",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-24",
+    "title": "美国官员称中国尚未收到任何英伟达H200芯片",
+    "summary": "美国商务部官员表示，尽管出口许可证已获批，但英伟达的第二代先进AI芯片H200尚未向中国客户出售任何产品。这一确认表明对华销售仍处于停滞状态。",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/world/asia-pacific/china-has-not-yet-received-any-nvidia-h200-chips-us-official-said-2026-02-24/",
+    "canonical_url": "https://reuters.com/world/asia-pacific/china-has-not-yet-received-any-nvidia-h200-chips-us-official-said-2026-02-24",
+    "region": "China",
+    "segment": "出口管制",
+    "tags": [
+      "NVIDIA",
+      "H200",
+      "中国",
+      "出口管制",
+      "美国商务部"
+    ],
+    "event_type": "fact",
+    "metrics": null,
+    "evidence": {
+      "title_on_page": "China has not yet received any Nvidia H200 chips, US official says",
+      "published_date_text": "February 24, 2026",
+      "key_fact_snippet": "None of Nvidia's second-most advanced AI chips, known as the H200, have been sold yet to Chinese customers",
+      "pricing_or_leadtime_snippet": ""
+    },
+    "main_category": "ai_hardware",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-17",
+    "title": "月之暗面估值暴涨超100% Kimi K2.5发布后融资加速",
+    "summary": "月之暗面在Kimi K2.5模型发布后融资加速，2026年2月完成超12亿美元融资，估值从约43亿美元翻倍至超100亿美元。公司近20天API收入超过2025年全年总和。",
+    "source": "新浪财经",
+    "url": "https://finance.sina.com.cn/roll/2026-02-17/doc-inhncqxa1778572.shtml",
+    "canonical_url": "https://finance.sina.com.cn/roll/2026-02-17/doc-inhncqxa1778572.shtml",
+    "region": "China",
+    "segment": "投融资",
+    "tags": [
+      "月之暗面",
+      "Kimi K2.5",
+      "估值暴涨",
+      "融资",
+      "十角兽"
+    ],
+    "event_type": "fact",
+    "metrics": {
+      "metric_type": "quote",
+      "item": "月之暗面估值",
+      "value": "100-120亿美元",
+      "unit": "USD",
+      "context": "月之暗面完成超12亿美元融资，估值从约43亿美元翻倍至超100亿美元",
+      "channel_vendor": "",
+      "geo": "China"
+    },
+    "evidence": {
+      "title_on_page": "利好！刚刚，暴涨超100%！",
+      "published_date_text": "2026-02-17",
+      "key_fact_snippet": "月之暗面两月内完成超12亿美元融资，估值破100亿美元",
+      "pricing_or_leadtime_snippet": "估值从约43亿美元翻倍至超100亿美元"
+    },
+    "main_category": "ai_funding_ma",
+    "sub_categories": [],
+    "already_in_local": false
+  },
+  {
+    "date": "2026-02-11",
+    "title": "TSMC深度投资研究报告：HBM3E 2026年涨价约20%",
+    "summary": "报告指出SK Hynix和三星同步上调HBM3E价格，2026年交付价格涨幅约20%。DDR5与HBM3E的价差从4-5倍收窄至1-2倍。",
+    "source": "100 Baggers",
+    "url": "https://www.100baggers.club/zh/reports/tsm",
+    "canonical_url": "https://100baggers.club/en/reports/tsm",
+    "region": "Global",
+    "segment": "内存与成本",
+    "tags": [
+      "TSMC",
+      "HBM3E",
+      "涨价",
+      "SK海力士",
+      "三星"
+    ],
+    "event_type": "analysis",
+    "metrics": {
+      "metric_type": "cost_trend",
+      "item": "HBM3E",
+      "value": "20%",
+      "unit": "%",
+      "context": "HBM3E Pricing, Price increase ~20% (2026 delivery), SK Hynix + Samsung simultaneously raised prices.",
+      "channel_vendor": "SK Hynix, Samsung",
+      "geo": "Global"
+    },
+    "evidence": {
+      "title_on_page": "TSMC (NYSE: TSM) In-Depth Investment Research Report",
+      "published_date_text": "2026-02-11",
+      "key_fact_snippet": "HBM3E Pricing, Price increase ~20% (2026 delivery), SK Hynix + Samsung simultaneously raised prices.",
+      "pricing_or_leadtime_snippet": "Price increase ~20% (2026 delivery)"
     },
     "main_category": "ai_hardware",
     "sub_categories": [],

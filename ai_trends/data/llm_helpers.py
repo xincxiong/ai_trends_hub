@@ -4,18 +4,26 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from typing import Any, Dict, List, Optional
 
 from ..model import call_responses
+from .fetch_status import inc_api_calls, set_current_site
 
 
 def extract_json_array(text: str) -> Optional[str]:
     if not text:
         return None
     text = text.strip()
+    # 去掉 markdown 代码块
+    for pattern in (r"```(?:json)?\s*([\s\S]*?)\s*```", r"```\s*([\s\S]*?)\s*```"):
+        m = re.search(pattern, text)
+        if m:
+            text = m.group(1).strip()
+            break
     if text.startswith("[") and text.endswith("]"):
         return text
-    m = re.search(r"\[\s*\{.*?\}\s*\]", text, flags=re.S)
+    m = re.search(r"\[\s*\{.*\}\s*\]", text, flags=re.S)
     if m:
         return m.group(0)
     l, r = text.find("["), text.rfind("]")
@@ -41,6 +49,8 @@ def call_model_json_array(
     """调用模型并解析输出为 JSON 数组；失败时尝试一次修复解析。需要联网时传 web_search，由 API 能力决定是否生效。"""
     use_web = use_web_search  # 始终按调用方意图传 web_search，不支持时 call_responses 会降级
     tools = [{"type": "web_search"}] if use_web else None
+    set_current_site(pass_name or "llm")
+    inc_api_calls()
     resp = call_responses(prompt=prompt, tools=tools)
     raw = getattr(resp, "output_text", None) or ""
 
@@ -54,12 +64,15 @@ def call_model_json_array(
 原始输出：
 {raw}
 """.strip()
+        inc_api_calls()
         resp2 = call_responses(prompt=repair_prompt, tools=None)
         raw2 = getattr(resp2, "output_text", None) or ""
         json_text2 = extract_json_array(raw2)
         data = safe_json_loads(json_text2)
 
     if data is None or not isinstance(data, list):
+        print("[llm_helpers] 无法解析为 JSON 数组，原始输出（前 2000 字符）:", file=sys.stderr)
+        print(raw[:2000] if raw else "(空)", file=sys.stderr)
         raise ValueError("无法解析模型输出为 JSON 数组。请查看上方 RAW 输出。")
 
     return [x for x in data if isinstance(x, dict)]

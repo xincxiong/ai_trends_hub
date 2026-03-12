@@ -100,7 +100,7 @@ def index_page() -> str:
       transition: color 0.2s, background 0.2s;
     }
     .sidebar nav a:hover { background: var(--accent-soft); color: var(--link); }
-    .main { flex: 1; padding: 0 40px 56px; max-width: 780px; }
+    .main { flex: 1; padding: 0 40px 56px; max-width: 780px; margin: 0 auto; }
     .site-header {
       padding: 32px 0 28px;
       border-bottom: 1px solid var(--border-subtle);

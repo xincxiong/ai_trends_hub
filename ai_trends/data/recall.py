@@ -3,12 +3,40 @@
 from __future__ import annotations
 
 import json
+import re
+import sys
 from typing import Any, Dict, List
 
 from ..config import settings
+from ..model.web_search_adapter import run_web_search
 from .domains import CHANNEL_VENDOR_KEYWORDS
 from .url_utils import canonicalize_url
+from .fetch_status import set_current_content, set_current_site, set_current_url, set_phase
 from .llm_helpers import call_model_json_array
+
+
+# URL 有效性正则：基础验证
+_URL_RE = re.compile(r"^https?://[^\s<>\"]+$", re.IGNORECASE)
+
+
+def _is_valid_url(url: str) -> bool:
+    """严格校验 URL：必须是有效的 http/https 链接。"""
+    if not url:
+        return False
+    url = url.strip()
+    if _URL_RE.match(url):
+        return True
+    return False
+
+
+def _filter_valid_urls(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """过滤出有有效 URL 的条目，丢弃无 URL 或 URL 无效的项。"""
+    valid = []
+    for x in items:
+        url = (x.get("url") or "").strip()
+        if _is_valid_url(url):
+            valid.append(x)
+    return valid
 
 
 def is_channel_or_cost_signal(title_or_reason: str) -> bool:
@@ -167,19 +195,35 @@ def recall_urls_for_pass(
 {json.dumps(local_refs, ensure_ascii=False, indent=2)}
 {focus_extra}
 
-【输出要求】
+【输出要求】⚠️ 关键：每条新闻/信息必须附带真实可访问的 URL，无 URL 的条目将全部被丢弃！
 - 只输出严格 JSON 数组，不要 markdown，不要解释
 - 每条对象字段：
-  - url: 原文链接（必须可打开的具体页面）
+  - url: 原文链接（必须可打开的完整 URL，以 http:// 或 https:// 开头，禁止编造）
   - source_hint: 站点名/媒体名（可空）
   - title_hint: 页面标题（可空）
   - date_hint: YYYY-MM-DD（不确定可空）
   - reason: 1句话说明强相关点（可空）
 - 每轮最多 {per_pass} 条（pass={pass_name}）
 - 不要输出 docs/help/wiki/manual/faq 页面
+- 禁止输出无 URL 的条目，禁止使用占位符 URL（如 https://example.com）
 """.strip() + "\n\n【本轮检索关键词】\n" + "\n".join("- " + q for q in queries)
 
-    data = call_model_json_array(prompt, pass_name=f"recall-url-{pass_name}", use_web_search=True)
+    set_phase("recall")
+    set_current_site(f"召回: {pass_name}")
+    first_q = (queries[0] or "").strip() if queries else ""
+    set_current_url(first_q[:500] if first_q else pass_name)
+    set_current_content("检索关键词: " + ", ".join((q or "").strip()[:60] for q in (queries or [])[:5]))
+    try:
+        data = call_model_json_array(prompt, pass_name=f"recall-url-{pass_name}", use_web_search=True)
+    except ValueError as e:
+        print(f"[recall] 本轮回召解析失败 (pass={pass_name})，跳过本轮: {e}", file=sys.stderr)
+        return []
+
+    # 严格过滤：仅保留有有效 URL 的条目
+    data = _filter_valid_urls(data)
+    if not data:
+        print(f"[recall] 本轮回召无有效 URL (pass={pass_name})，跳过", file=sys.stderr)
+        return []
 
     out: List[Dict[str, Any]] = []
     for x in data:
@@ -195,4 +239,84 @@ def recall_urls_for_pass(
             "reason": (x.get("reason") or "").strip(),
             "pass": pass_name,
         })
+    return out
+
+
+def recall_research_papers(start: str, end: str, local_refs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    科研论文专项检索：在 arXiv/顶会/预印本平台搜索近期最新论文，返回带摘要的真实链接。
+    与普通召回不同，这里直接调用外部搜索获取真实论文 URL + 摘要，不依赖大模型编造。
+    """
+    S = f"{start} to {end}"
+    # 构造多维度论文检索 query
+    paper_queries = [
+        f"site:arxiv.org AI machine learning {S}",
+        f"site:arxiv.org LLM large language model {S}",
+        f"site:arxiv.org transformer MoE diffusion {S}",
+        f"NeurIPS ICLR ICML 2025 paper",
+        f"arXiv new papers AI 2025",
+    ]
+
+    # 使用外部搜索获取真实论文链接（不经过大模型，避免编造）
+    paper_results: List[Dict[str, Any]] = []
+    seen_urls = set()
+
+    for q in paper_queries:
+        set_phase("recall")
+        set_current_site("科研论文检索")
+        set_current_url(q[:200])
+        set_current_content(f"论文检索: {q}")
+
+        raw = run_web_search(q, num_results=10)
+        if not raw:
+            continue
+
+        # 解析搜索结果：提取标题、链接、摘要
+        current_item = {}
+        for line in raw.split("\n"):
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith("标题:"):
+                current_item = {"title": line.split(":", 1)[-1].strip(), "url": "", "snippet": ""}
+            elif line.startswith("链接:") and current_item:
+                url = line.split(":", 1)[-1].strip()
+                if url and url not in seen_urls and _is_valid_url(url):
+                    current_item["url"] = url
+                    seen_urls.add(url)
+            elif line.startswith("摘要:") and current_item:
+                current_item["snippet"] = line.split(":", 1)[-1].strip()
+                # 完成一条，保存
+                if current_item.get("url"):
+                    paper_results.append(current_item)
+                    current_item = {}
+
+        # 防止最后一条没有摘要的情况
+        if current_item.get("url") and "snippet" not in current_item:
+            paper_results.append(current_item)
+
+    if not paper_results:
+        print("[recall] 科研论文检索未返回结果", file=sys.stderr)
+        return []
+
+    # 只保留前 10 篇最新最相关的
+    paper_results = paper_results[:10]
+
+    # 转换为标准召回格式
+    out = []
+    for i, p in enumerate(paper_results):
+        url = p.get("url", "").strip()
+        if not url or not _is_valid_url(url):
+            continue
+        out.append({
+            "url": url,
+            "canonical_url": canonicalize_url(url),
+            "source_hint": p.get("source_hint", "").strip() or "arXiv/论文",
+            "title_hint": p.get("title", "").strip(),
+            "date_hint": "",
+            "reason": (p.get("snippet") or "").strip()[:100],
+            "pass": "research-papers",
+        })
+
+    print(f"[recall] 科研论文检索完成，获取 {len(out)} 篇论文", file=sys.stderr)
     return out

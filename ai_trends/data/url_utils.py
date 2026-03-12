@@ -19,7 +19,7 @@ def get_domain(u: str) -> str:
         d = urlparse(u).netloc.lower()
         if d.startswith("www."):
             d = d[4:]
-        return d
+        return 
     except Exception:
         return ""
 

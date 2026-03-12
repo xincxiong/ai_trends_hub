@@ -22,19 +22,20 @@ ai_trends_hub/
 │   │   ├── recall.py      # 两阶段 Stage A：多轮检索召回候选 URL
 │   │   ├── verify.py      # 两阶段 Stage B：联网核验并抽取结构化字段
 │   │   ├── cleaner.py     # 清洗：原始/核验结果 → Article（含标题翻译、segment→main_category）
-│   │   ├── storage.py     # 存储、去重、快照、备份、按日期保留
+│   │   ├── storage.py     # 存储、去重、快照、备份、按日期保留、断点续抓文件操作
 │   │   ├── pipeline.py    # 编排：抓取（单阶段或两阶段）→ 清洗 → 保存
 │   │   ├── data_collection.py  # 数据收集入口（fetch_daily_news / run_pipeline）
 │   │   ├── domains.py     # 域名白名单与渠道关键词
 │   │   ├── url_utils.py   # URL/标题规范化、域名校验
-│   │   └── llm_helpers.py # 数据层 LLM 调用封装（JSON 数组解析）
+│   │   ├── llm_helpers.py # 数据层 LLM 调用封装（JSON 数组解析）
+│   │   └── fetch_status.py # 抓取状态追踪（断点续抓状态打印）
 │   ├── model/             # 模型调用中间层
 │   │   └── client.py      # LLM 客户端封装（API 接入与调度）
 │   └── app/               # 应用服务层
 │       └── api.py         # FastAPI 应用，/health、/articles
 ├── scripts/
-│   ├── run_fetch.py       # 执行一次抓取并更新 data/news.json 与快照
-│   └── run_api.py        # 启动 API 服务
+│   ├── run_fetch.py       # 执行一次抓取（支持断点续抓）
+│   └── run_api.py         # 启动 API 服务
 ├── data/
 │   ├── news.json         # 聚合后的新闻数据（运行后生成）
 │   └── snapshots/        # 每次抓取的结构化快照
@@ -50,13 +51,19 @@ ai_trends_hub/
 - **模型中间层** 仅依赖 `config`，负责统一的大模型 API 接入与调用。
 
 **抓取模式**（由 `AI_TRENDS_TWO_STAGE` 控制，默认 `true`）：
-- **两阶段**：Stage A 多轮检索召回候选 URL → Stage B 逐条联网核验并抽取字段 → 清洗、去重、标题翻译 → 合并写入。适合需要“真实来源+证据”的 AI/GPU 情报。
+- **两阶段**：Stage A 多轮检索召回候选 URL → Stage B 逐批联网核验并抽取字段（**边抓边存**）→ 清洗、去重、标题翻译 → 合并写入。适合需要“真实来源+证据”的 AI/GPU 情报。支持 **断点续抓**：核验阶段每批落盘并写 checkpoint，中断后再次执行 `run_fetch.py` 会从上一批继续，无需重头抓取。
 - **单阶段**：单次大 prompt 召回并输出结构化条目 → 清洗 → 合并写入。
 
 抓取结果以两种方式落盘：
 
 - **聚合数据**：`data/news.json`（合并去重后的全量）
 - **每次快照**：`data/snapshots/snapshot_{start}_to_{end}.json`
+
+**断点续抓文件**（两阶段模式，临时文件，成功后自动清理）：
+
+- `data/checkpoint_{start}_to_{end}.json`：记录召回完成状态、当前核验批次索引
+- `data/session_verified_{start}_to_{end}.json`：已核验结果（每批追加，**边抓边存**）
+- `data/recall_candidates_{start}_to_{end}.json`：召回阶段产生的候选 URL 列表
 
 支持的主模块（`main_category`）：`ai_hardware`、`ai_software`、`ai_application`、`ai_funding_ma`、`ai_research`。
 
@@ -176,6 +183,7 @@ python scripts/run_api.py
 |------|------|------|
 | `GET /health` | 健康检查 | - |
 | `GET /articles` | 按模块分页查询文章列表 | `main_category`, `limit`, `offset`, `q` |
+| `GET /category-summary` | 获取指定分类的 LLM 汇总概要（需大模型 API） | `main_category`, `end_date`, `days` |
 
 ### 前端页面展示内容
 

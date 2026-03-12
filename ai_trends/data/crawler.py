@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import Any, Dict, List
 
 from ..model import call_responses
+from .fetch_status import inc_api_calls, set_current_content, set_current_site, set_current_url, set_phase
 from .domains import get_preferred_domains_hint
 
 
@@ -33,7 +34,7 @@ def build_crawl_prompt(win: CrawlWindow, use_web_search: bool = True) -> str:
 【重要要求】
 - 必须基于真实网页内容或论文页面，不要编造
 - 每条新闻至少来自一个可打开的新闻/博客/公告/论文页面
-- 同一事件尽量只保留 1 条最权威或信息量最大的来源
+- 同一事件尽量只保留 2 条最权威或信息量最大的来源
 
 【输出格式】
 - 严格输出 JSON 数组，不要 markdown，不要额外说明
@@ -115,8 +116,13 @@ def _extract_json_array(text: str) -> str | None:
 def fetch_raw_items(win: CrawlWindow) -> List[Dict[str, Any]]:
     """通过模型中间层抓取并返回原始 JSON 对象列表。始终请求联网检索；若 API 不支持则自动降级为基于模型知识。"""
     use_web = True  # 始终请求 web_search，由 call_responses 根据 API 能力尝试或降级
+    set_phase("crawler")
+    set_current_site("单阶段抓取 (web_search)")
+    set_current_url("web_search 聚合抓取")
+    set_current_content("时间窗口 %s～%s，联网检索 AI 硬件/软件/应用/融资/科研 动态" % (win.start, win.end))
     prompt = build_crawl_prompt(win, use_web_search=use_web)
     tools = [{"type": "web_search"}]
+    inc_api_calls()
     resp = call_responses(prompt=prompt, tools=tools)
     raw = getattr(resp, "output_text", None) or ""
 
